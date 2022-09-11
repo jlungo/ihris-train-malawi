@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="name-Titles">
+  <metadata>
+    <displayName>Prefix</displayName>
+    <description>Common name titles</description>
+    <category>LOCALISED Modules</category>
+    <version>4.2.0</version>
+    <creator>iHRIS Tanzania</creator>
+    <email>support@zalongwa.com</email>
+  </metadata>
+  <configurationGroup name="name-Titles" path="/modules/forms/forms/nametitle">
+    <displayName>Prefixt</displayName>
+    <version>4.2.0</version>
+    <configuration name="class">
+      <displayName>Class</displayName>
+      <value>I2CE_SimpleList</value>
+    </configuration>
+    <configuration name="display">
+      <displayName>Display</displayName>
+      <value>Prefix Name</value>
+    </configuration>
+    <configuration name="read_only">
+      <displayName>Read Only</displayName>
+      <value>0</value>
+    </configuration>
+    <configuration name="storage">
+      <displayName>Storage</displayName>
+      <value>magicdata</value>
+    </configuration>
+  </configurationGroup>
+</I2CEConfiguration>

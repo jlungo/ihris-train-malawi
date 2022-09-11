@@ -1,0 +1,75 @@
+<div id="siteContent">
+<div>
+<div id="error" />
+<h3>
+	      Transfer Details For <span type="form" name="person:surname" noedit="true"></span>,<span type="form" name="person:firstname" noedit="true"></span>
+	    </h3>
+<table border="0" cellpadding="0" cellspacing="0" class="multiFormTable">
+	<tr>
+		<th colspan="2">Current Student Details</th>
+   </tr>
+	<tr>
+		<td>
+      	<span type="form" name="registration:training_program" noedit="true" showhead="default"></span>
+			<span type="form" name="registration:semester" noedit="true" showhead="default"></span>
+			<span type="form" name="registration:academic_level" noedit="true" showhead="default"></span>
+			<span type="form" name="registration:admission_type" noedit="true" showhead="default"></span>
+			<span type="form" name="registration:registration_number" noedit="true" showhead="default"></span>
+			<span type="form" name="registration:training_institution" noedit="true" showhead="default"></span>
+			<span type="form" name="registration:training_program" noedit="true" showhead="default"></span>
+		</td>
+	</tr>
+</table>
+<p>
+<form  method="post" action="transfer_ahti_process">
+        <span type="form" name="person:id"></span>
+<div id="form">
+    <h1>Enter New Student Details</h1>
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <th colspan="2">Enter Transfer Details</th>
+    </tr>
+	<tr id="list_fields">
+		<td>
+		<span type="form" name="transfer:parent" />
+		<span type="form" name="transfer:source_institution" />
+		<span type="form" name="transfer:source_program" />
+		<span type="form" name="transfer:source_semester" />
+				<span type="form" name="transfer:destination_institution" showhead="default"></span>
+		</td>
+		<td>
+				<span type="form" name="transfer:destination_program" showhead="default"></span>
+		</td>
+	</tr>
+	<tr>
+		<td>
+				<span type="form" name="transfer:destination_semester" showhead="default"></span>
+		</td>
+		<td>
+				<span type="form" name="transfer:destination_level" showhead="default"></span>
+		</td>
+	</tr>
+	<tr>
+		<td>
+				<span type="form" name="transfer:destination_admission_type" showhead="default"></span>
+		</td>
+		<td>
+				<span type="form" name="transfer:transfer_date" showhead="default"></span>
+		</td>
+	</tr>
+	<tr>
+		<td>
+				<span type="form" name="transfer:academic_year" showhead="default"></span>
+		</td>
+	</tr>
+    <tr class="submitCell">
+        <td colspan="2">
+            <div id="button"><input type="submit" name="save" value="Save"></div>
+        </td>
+    </tr>
+	</table>
+    
+</div>
+    </form>
+</div>
+</div>

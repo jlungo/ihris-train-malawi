@@ -1,0 +1,438 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="IHSTrainerAddResults">
+  <metadata>
+    <displayName>Lecturer Upload/Add Students Results</displayName>
+    <creator>Ally Shaban</creator>
+    <email>allyshaban5@gmail.com</email>
+    <category>Application Component</category>
+    <description>This module defines many forms,semester_GPA,students_results,overall_GPA and discontinued</description>
+    <link>https://launchpad.net/ihris-ihs</link>
+    <version>4.2.0.37</version>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <requirement name="TrainerAddResults">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <priority>400</priority>
+  </metadata>
+  <configurationGroup name="TrainerAddResults" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <version>4.2.0.20</version>
+      <configuration name="can_print_transcript" locale="en_US">
+        <value>Can print student transcript</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="disco_reason-data" path="/I2CE/formsData/forms/disco_reason">
+        <version>4.2.0.37</version>
+      <configurationGroup name="probations">
+	     <configuration name="last_modified">
+          <value>2014-04-16 12:25:30</value>
+	     </configuration>
+	     <configuration name="who">
+          <value>1</value>
+	     </configuration>
+	     <configurationGroup name="fields">
+          <configuration name="name">
+            <value>3 Academic Probations</value>
+          </configuration>
+	     </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="incomplete">
+	     <configuration name="last_modified">
+          <value>2014-04-16 12:25:30</value>
+	     </configuration>
+	     <configuration name="who">
+          <value>1</value>
+	     </configuration>
+	     <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Failed Completing Course Within 12 Months</value>
+          </configuration>
+	     </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="retake">
+	     <configuration name="last_modified">
+          <value>2014-04-16 12:25:30</value>
+	     </configuration>
+	     <configuration name="who">
+          <value>1</value>
+	     </configuration>
+	     <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Failed Retaking A Course Twice</value>
+          </configuration>
+	     </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="failed_all">
+	     <configuration name="last_modified">
+          <value>2014-04-16 12:25:30</value>
+	     </configuration>
+	     <configuration name="who">
+          <value>1</value>
+	     </configuration>
+	     <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Failed All Semester Courses</value>
+          </configuration>
+	     </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <version>4.2.0.18</version>
+		  <configurationGroup name="person">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <status>uniquemerge:true</status>              
+              <value>academic_probation</value>
+              <value>pending_courses</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="academic_probation">
+          <displayName>Student Academic Probation</displayName>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>IHS_academicProbation</value>
+          </configuration>          
+        </configurationGroup>
+        <configurationGroup name="recommendations">
+          <displayName>Recommendations</displayName>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name='storage'>
+	         <value>magicdata</value>
+	       </configuration>
+        </configurationGroup>
+        <configurationGroup name="pending_courses">
+          <displayName>Student Pending/Retake Courses</displayName>
+          <description>List Of Pending/Retake Courses</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_pendingCourses</value>
+          </configuration>          
+        </configurationGroup>
+        <configurationGroup name="semester_status">
+          <displayName>Semester Status</displayName>
+          <description>Student Status In A Semester</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_semesterStatus</value>
+          </configuration>          
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <version>4.2.0.35</version>
+        <configurationGroup name="IHS_academicProbation">
+          <displayName>Configuration for the class 'IHS_academicProbation'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>	       
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>                        
+            <configurationGroup name="training">
+              <displayName>The field 'assessment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="academic_year">
+              <displayName>The field 'assessment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="semester">
+              <displayName>The field 'assessment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="registration">
+              <displayName>The field 'semester'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Registration</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="probation_date">
+              <displayName>The field 'probation_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="count">
+              <displayName>The field 'assessment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+            </configurationGroup>            
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="iHRIS_semesterStatus">
+          <version>4.2.0.25</version>
+          <displayName>Configuration for the class 'iHRIS_semesterStatus'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <version>4.2.0.25</version>
+            <displayName>The fields defined for this form</displayName>                                    
+            <configurationGroup name="registration_number">
+              <displayName>The field 'registration_number'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="registration">
+              <displayName>The field 'semester'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Registration</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="semester">
+              <displayName>The field 'semester'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="academic_year">
+              <displayName>The field 'academic_year'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="enroll_course">
+              <displayName>The field 'enroll_course'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="status">
+              <displayName>The field 'status'</displayName>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>recommendations</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+            </configurationGroup>            
+          </configurationGroup>
+	     </configurationGroup>
+        <configurationGroup name="iHRIS_pendingCourses">
+	       <version>4.2.0.25</version>
+          <displayName>Configuration for the class 'IHS_studentsresults'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>                                    
+            <configurationGroup name="registration_number">
+              <displayName>The field 'registration_number'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="semester">
+              <displayName>The field 'semester'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="enroll_course">
+              <displayName>The field 'semester'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="registration">
+              <displayName>The field 'semester'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Registration</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="academic_year">
+              <displayName>The field 'academic_year'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="training">
+              <displayName>The field 'semester'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP_MULT</value>
+              </configuration>
+            </configurationGroup>            
+          </configurationGroup>
+	     </configurationGroup>
+        <configurationGroup name="iHRIS_studentsResultsGrade">
+          <version>4.2.0.35</version>
+          <displayName>Configuration for the class 'iHRIS_studentsResultsGrade'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>                                    
+            <configurationGroup name="recommendations">              
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="theory_mark">              
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>FLOAT</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="clinical_mark">              
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>FLOAT</value>
+              </configuration>
+            </configurationGroup>            
+          </configurationGroup>
+	     </configurationGroup>
+	     <configurationGroup name="iHRIS_overallGPA">
+	       <version>4.2.0.31</version>
+          <displayName>Configuration for the class 'iHRIS_overallGPA'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>                                    
+            <configurationGroup name="year">              
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+            </configurationGroup>            
+          </configurationGroup>
+	     </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <version>4.2.0.33</version>
+      <configurationGroup name='add_results_select_course'>
+        <displayName>A page to select courses to add results</displayName>
+        <description>A page to select courses to add results</description>
+        <configuration name='class' values='single'>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormSelectcourse</value>
+        </configuration>
+    	  <configuration name="style">
+          <displayName>Style</displayName>
+      	 <value>shell</value>
+		  </configuration>	     
+	     <configurationGroup name="args">
+          <configuration name="defaultHTMLFile" values="single">
+            <value>select_course.html</value>
+          </configuration>         
+          <configuration name="action_fields" type="delimited" values="many">
+            <value>0:primary_form+training_courses</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+
+      <configurationGroup name='add_results'>
+        <displayName>A page to add students results</displayName>
+        <description>A page to add students results</description>
+        <configuration name='class' values='single'>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormAddResults</value>
+        </configuration>
+	     <configuration name="style">
+          <displayName>Style</displayName>
+      	  <value>shell</value>
+	     </configuration>	    
+	     <configurationGroup name="args">
+          <configuration name="defaultHTMLFile" values="single">
+            <value>add_results.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+
+      <configurationGroup name='add_results_process'>
+        <displayName>A page to process tudents results</displayName>
+        <description> The page 'add_results_process' which has the action of: Adding Students Results</description>
+        <configuration name='class' values='single'>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormAddResultsProcess</value>
+        </configuration>
+	     <configuration name="style">
+          <displayName>Style</displayName>
+      	  <value>shell</value>
+	     </configuration>	
+	     <configurationGroup name="args">
+          <configuration name="defaultHTMLFile" values="single">
+            <value>add_results_process.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="student_transcript">
+        <configuration name="class" values="single">
+          <value>IHS_PrepareTranscript</value>
+        </configuration>
+      </configurationGroup>
+      <configurationGroup name="download_transcript">
+        <configuration name="class" values="single">
+          <value>IHS_DownloadTranscript</value>
+        </configuration>
+      </configurationGroup>  
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="IST-ProviderInstance">
+  <metadata>
+    <displayName>IST ProviderInstance</displayName>
+    <category>Application Component</category>
+    <description>A Training Provider's Instance</description>
+    
+    <version>4.2.0.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    
+    <erase path="/modules/forms/formClasses/iHRIS_ProviderInstance/fields/district">
+      <lessThan version="4.3" />
+    </erase>
+     
+    
+    <priority>300</priority>
+  </metadata>
+   
+  
+  <configurationGroup name="IST-ProviderInstance" path="/I2CE">   
+    <displayName>IST ProviderInstance</displayName>
+    
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">		
+        <displayName>Forms</displayName>
+        <description>Information about the forms made available by iHRIS-Common TrainingProvider</description>
+        <version>4.2.0.0</version>
+        
+        <configurationGroup name="mastertrainer">
+          <version>4.2.0.0</version>
+          <configuration name="class" values="single">
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <value>Master Trainer</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+       <!-- End of forms -->
+      
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_ProviderInstance">
+          <displayName>Configuration for the class 'iHRIS_ProviderInstance'</displayName>               
+          
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <version>4.2.0.0</version>
+
+            <configurationGroup name="cost">
+              <displayName>The field 'cost'</displayName>
+              <version>4.2.0.0</version>
+              <configuration name="formfield">
+                <value>CURRENCY</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <value>default:Total Cost</value>
+              </configuration>
+            </configurationGroup>
+            
+            <configurationGroup name="funder">
+              <displayName>The field 'funder'</displayName>                         
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.2.0.0</version>
+                <value>default:Source of PEPFAR Funding</value>
+              </configuration>
+            </configurationGroup>
+            <!-- funder -->
+            
+            <configurationGroup name="job">
+              <version>4.2.0.0</version>				
+              <displayName>The field 'job'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP_MULT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.2.0.0</version>
+                <value>default:Target Job(s)</value>
+              </configuration>
+            </configurationGroup>
+            <!-- job -->
+            
+            <configurationGroup name="venue">
+              <version>4.2.0.0</version>				
+              <displayName>The field 'end_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.2.0.0</version>
+                <value>default:Location of Training</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>false</value>
+              </configuration>
+            </configurationGroup>
+            
+            
+            <configurationGroup name="location">
+              <version>4.2.0.0</version>
+              <displayName>The field 'State of Training'</displayName>
+              <configuration name="formfield">
+                <version>4.2.0.0</version>				  
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <version>4.2.0.0</version>				  
+                <configuration name="form" values="many">
+                  <value>district</value>
+                </configuration>
+                 
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.2.0.0</version>
+                <value>default:State of Training</value>
+              </configuration>
+               
+            </configurationGroup>
+             
+            
+            <configurationGroup name="provider_comments">
+              <displayName>The field 'end_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.2.0.0</version>
+                <value>default:Post Training Comments</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>false</value>
+              </configuration>
+            </configurationGroup>
+            
+            <configurationGroup name="mastertrainer">
+              <version>4.2.0.0</version>		   
+              <displayName>The field 'name'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.2.0.0</version>
+                <value>default:Master Trainer</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>false</value>
+              </configuration>
+            </configurationGroup>
+
+            <configurationGroup name="trainers">
+              <version>4.2.0.0</version>		   
+              <displayName>The field 'trainers'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_MLINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.2.0.0</version>
+                <value>default:Master Trainer</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>false</value>
+              </configuration>
+            </configurationGroup>
+              
+            
+          </configurationGroup>
+        </configurationGroup>
+        
+        
+      </configurationGroup>
+      <!-- end of  formClasses-->
+      <configurationGroup name="fee_form" path="/modules/forms/formClasses/iHRIS_Fee/fields"> 
+        <!--<configurationGroup name="iHRIS_Fee"> -->
+        <version>4.2.0.0</version>
+        <displayName>Configuration for the class 'iHRIS_ProviderInstance'</displayName>
+        <configurationGroup name="fee_type">
+          <version>4.2.0.0</version>
+          <displayName>The field 'fee_type'</displayName>
+          <configuration name="in_db" type="boolean">
+            <displayName>Store the field in the database</displayName>
+            <value>true</value>
+          </configuration>
+           
+          <configuration name="headers" type="delimited" locale="en_US">
+            <displayName>The headers for this field.</displayName>
+            <value>default:Fee Type</value>
+          </configuration>
+          <configuration name="required" type="boolean">
+            <displayName>This field is required to be set</displayName>
+            <value>false</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+       <!-- iHRIS_Fee -->
+      
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

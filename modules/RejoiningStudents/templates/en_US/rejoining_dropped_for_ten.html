@@ -1,0 +1,65 @@
+<div id="siteContent">
+<div>
+<div id="error" />
+<h3>
+	      Rejoining Details For <span type="form" name="person:surname" noedit="true"></span>,<span type="form" name="person:firstname" noedit="true"></span>
+	    </h3>
+<table border="0" cellpadding="0" cellspacing="0" class="multiFormTable">
+	<tr>
+		<th colspan="2">This Student Have Exceeded 10 Semesters Since Dropped,So Will Need To Be Admitted In Semester One,Current Registration Will Be Deleted</th>
+	</tr>
+	<tr>
+		<th colspan="2">Student Details Before Dropping</th>
+   </tr>
+	<tr>
+		<td>
+			<span type="form" name="registration:semester" noedit="true" showhead="default"></span>
+			<span type="form" name="registration:registration_number" noedit="true" showhead="default"></span>
+			<span type="form" name="registration:training_program" noedit="true" showhead="default"></span>
+			<span type="form" name="registration:training_institution" noedit="true" showhead="default"></span>
+			<span type="form" name="registration:admission_type" noedit="true" showhead="default"></span>
+			<span type="form" name="drop_semester:drop_date" noedit="true" showhead="default"></span>
+			<span type="form" name="drop_semester:academic_year" noedit="true" showhead="default"></span>
+			<span type="form" name="drop_semester:reason" noedit="true" showhead="default"></span>
+			<span type="form" name="drop_semester:semester" noedit="true" showhead="default"></span>
+		</td>
+	</tr>
+</table>
+<p>
+<form  method="post" action="rejoining_dropped_for_ten">
+        <span type="form" name="person:id"></span>
+<div id="form">
+    <h1>Enter New Student Details</h1>
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+		<th colspan="2">This Student Have Exceeded 10 Semesters Since Dropped,So Will Need To Be Admitted In Semester One,Current Registration Will Be Deleted</th>
+	</tr>
+    <tr>
+        <th colspan="2">Enter New Details For This Student</th>
+    </tr>
+	<tr id="list_fields">
+		<td>
+		<span type="form" name="drop_semester:id" />
+		<span type="form" name="rejoin:parent" />
+		<span type="form" name="rejoin:academic_year_rejoin" showhead="default"></span>
+		<span type="form" name="rejoin:rejoin_semester" showhead="default"></span>
+		<span type="form" name="rejoin:rejoin_level" showhead="default"></span>
+		<span type="form" name="rejoin:rejoin_date" showhead="default"></span>
+		</td>
+		<td>
+		<span type="form" name="rejoin:new_training_prog" showhead="default"></span>
+		<span type="form" name="rejoin:new_training_inst" showhead="default"></span>
+		<span type="form" name="rejoin:new_admission_type" showhead="default"></span>
+		</td>
+	</tr>
+    <tr class="submitCell">
+        <td colspan="2">
+            <div id="button"><input type="submit" name="save" value="Save"></div>
+        </td>
+    </tr>
+	</table>
+    
+</div>
+    </form>
+</div>
+</div>

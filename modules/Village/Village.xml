@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="customised-Village">
+  <metadata>
+    <displayName>Village</displayName>
+    <className>iHRIS_Module_Village</className>
+    <category>CUSTOMISED Modules</category>
+    <description>Adds Village to the geographic breakdown</description>
+    <creator>iHRIS Tanzania</creator>
+    <email>support@zalongwa.com</email>
+    <link>https://launchpad.net/ihris-manage-malawi</link>
+    <version>4.2.0</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="Geography">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>150</priority>
+  </metadata>
+  <configurationGroup name="customised-Village" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <version>4.1.0</version>
+      <configuration name="can_edit_database_list_village" locale="en_US">
+        <value>Can edit village list</value>
+      </configuration>
+      <configuration name="can_view_database_list_village" locale="en_US">
+        <value>Can view village list</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="tasks_trickle_down" path="/I2CE/tasks/task_trickle_down/">
+      <version>4.1.0</version>
+      <configuration name="can_edit_database_list_village" values="many">
+        <value>can_edit_geographic_database_lists</value>
+        <value>can_view_database_list_village</value>
+      </configuration>
+      <configuration name="can_edit_all_geographic_database_lists" values="many">
+        <value>can_edit_database_list_village</value>
+      </configuration>
+      <configuration name="can_view_all_geographic_database_lists" values="many">
+        <value>can_view_database_list_village</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms/">
+      <displayName>Forms</displayName>
+      <description>Information about the forms made available by iHRIS-Common Geography</description>
+      <configurationGroup name="forms">
+        <displayName>Forms available to the form factory</displayName>
+        <status>advanced:true</status>
+        <status>required:true</status>
+        <configurationGroup name="village">
+          <displayName>Village</displayName>
+          <description>The Village Form</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Village</value>
+          </configuration>
+          <configuration name="display" values="single">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Village</value>
+          </configuration>
+          <configuration name="storage" values="single">
+            <displayName>Storage Details</displayName>
+            <description>The storage mechanism for this form.</description>
+            <version>4.1.0</version>
+            <value>magicdata</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <displayName>Form Class Configuration</displayName>
+        <configurationGroup name="iHRIS_Village">
+          <displayName>Configuration for the class 'iHRIS_Village'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_List</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="name">
+              <displayName>The field 'name'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.1.0</version>
+                <value>default:Name</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="county">
+              <displayName>The field 'county'</displayName>
+              <version>4.1.0</version>
+              <configurationGroup name="meta">
+                <configurationGroup name="display">
+                  <configurationGroup name="default">
+                    <configuration name="fields">
+                      <version>4.1.0</version>
+                      <value>village:county</value>
+                    </configuration>
+                  </configurationGroup>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.1.0</version>
+                <value>default:Ward</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="code">
+              <displayName>The field 'code'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <version>4.1.0</version>
+                <value>default:Code</value>
+              </configuration>
+              <configuration name="unique" type="boolean">
+                <displayName>This field is required to be unique</displayName>
+                <value>true</value>
+              </configuration>
+              <configuration name="unique_field">
+                <displayName>This field is required to be unique</displayName>
+                <value>village:county</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

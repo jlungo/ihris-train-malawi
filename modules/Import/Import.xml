@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Import">
+  <metadata>
+    <displayName>Lecturer Upload/Add Students Results</displayName>
+    <creator>Ally Shaban</creator>
+    <email>allyshaban5@gmail.com</email>
+    <category>Application Component</category>
+    <description>Import Module</description>
+    <link>https://launchpad.net/ihris-ihs</link>
+    <version>4.2.0.1</version>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <priority>400</priority>
+  </metadata>
+  <configurationGroup name="TrainerAddResults" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <version>4.2.0.20</version>
+      <configuration name="can_print_transcript" locale="en_US">
+        <value>Can print student transcript</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <configurationGroup name='import'>
+        <displayName>A page to import student</displayName>
+        <description>A page to import student</description>
+        <configuration name='class' values='single'>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_Import</value>
+        </configuration>
+	     <configuration name="style">
+          <displayName>Style</displayName>
+      	  <value>shell</value>
+	     </configuration>	    
+	     <configurationGroup name="args">
+          <configuration name="defaultHTMLFile" values="single">
+            <value>import.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup> 
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

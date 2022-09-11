@@ -1,0 +1,441 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="RejoiningStudents">
+  <metadata>
+    <displayName>Rejoining Student</displayName>
+    <category>Application Component</category>
+    <creator>Ally Shaban</creator>
+    <className>IHS_Module_RejoiningStudents</className>
+    <email>allyshaban5@gmail.com</email>    
+    <description>Rejoining Students</description>
+    <link>https://launchpad.net/ihris-train</link>
+    <version>4.2.0.24</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <priority>350</priority>
+  </metadata>
+  <configurationGroup name="RejoiningStudents" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="can_rejoin_student" locale="en_US">
+        <value>Can Rejoin Student</value>
+      </configuration>      
+    </configurationGroup>
+    <configurationGroup name="rejoin-reason-data" path="/I2CE/formsData/forms/rejoin_reason">
+      <configurationGroup name="discontinued">
+	     <configuration name="last_modified">
+          <value>2014-04-16 12:25:30</value>
+	     </configuration>
+	     <configuration name="who">
+          <value>1</value>
+	     </configuration>
+	     <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Discontinued From Previous Program</value>
+          </configuration>
+	     </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="fail_and_exclude">
+	     <configuration name="last_modified">
+          <value>2014-04-16 12:25:30</value>
+	     </configuration>
+	     <configuration name="who">
+          <value>1</value>
+	     </configuration>
+	     <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Failed And Excluded</value>
+          </configuration>
+	     </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="dropped_semester">
+	     <configuration name="last_modified">
+          <value>2014-04-16 12:25:30</value>
+	     </configuration>
+	     <configuration name="who">
+          <value>1</value>
+	     </configuration>
+	     <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Resuming From Dropped Semester</value>
+          </configuration>
+	     </configurationGroup>
+      </configurationGroup>            
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <configurationGroup name="person">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <status>uniquemerge:true</status>
+              <value>rejoin</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="rejoin">
+          <displayName>Students Rejoining Institution Informations</displayName>
+          <description>Students Rejoining Institution Informations</description>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_Rejoin</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Students Rejoin Information</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="rejoin_reason">
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+          <configuration name='storage'>
+	         <value>magicdata</value>
+	       </configuration>
+        </configurationGroup>        
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="iHRIS_Rejoin">
+          <version>4.2.0.23</version>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="prev_registration">
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>registration</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Previous Registration</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="new_registration">
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>registration</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:New Registration</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="prev_training_prog">
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>training_program</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Previous Training Program</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="new_training_prog">
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>training_program</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:New Training Program</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="prev_training_inst">
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>training_institution</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Previous Training Institution</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="new_training_inst">
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>training_institution</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:New Training Institution</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="new_admission_type">
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>admission_type</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:New Admission Type</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="prev_admission_type">
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>admission_type</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Previous Admission Type</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="rejoin_reason">
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Rejoining Reasons</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="rejoin_date">
+              <displayName>The field 'rejoin_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default Value as an eval string</displayName>
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Rejoin Date</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="rejoin_semester">
+              <displayName>The field 'rejoin_semester'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>semester</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Semester Rejoining</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="rejoin_level">
+              <displayName>The field 'rejoin_level'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>academic_level</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Level Rejoining</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="academic_year_rejoin">
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>academic_year</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Academic Year Rejoining</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="academic_year_ended">
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>academic_year</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Last Academic Year Before Rejoining</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="semester_ended">
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>semester</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Last Semester Before Rejoining</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <version>4.2.0.24</version>
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+      <configurationGroup name="rejoining_student">
+        <displayName>Rejoin A Disco/Failed/Dropped/Suspended Student</displayName>
+        <description>The page 'rejoining_student' which is used to add and remove students from a scheduled training instance.</description>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configuration name='class' values='single'>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormRejoiningStudent</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Search Student</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <value>search_student.html</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_can_edit</value>
+          </configuration>          
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="rejoining_student_process">
+        <displayName>Process Student Transfered From Another AHTI</displayName>
+        <description>The page 'transfer_ahti_process' which is used to add and remove students from a scheduled training instance.</description>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configuration name='class' values='single'>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormRejoiningStudentProcess</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Transfer Process</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <value>rejoin_details.html</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_can_edit</value>
+          </configuration>          
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="rejoining_dropped_for_ten">
+        <displayName>Process Student Transfered From Another AHTI</displayName>
+        <description>The page 'rejoining_dropped_for_ten' which is used to add and remove students from a scheduled training instance.</description>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configuration name='class' values='single'>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormRejoiningDroppedForTen</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Transfer Process</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <value>rejoining_dropped_for_ten.html</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_can_edit</value>
+          </configuration>          
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

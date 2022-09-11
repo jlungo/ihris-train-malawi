@@ -1,0 +1,463 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="TransferStudents">
+  <metadata>
+    <displayName>Transfer Student</displayName>
+    <category>Application Component</category>
+    <creator>Ally Shaban</creator>
+    <className>IHS_Module_TransferStudents</className>
+    <email>allyshaban5@gmail.com</email>    
+    <description>Transfer Students</description>
+    <link>https://launchpad.net/ihris-train</link>
+    <version>4.2.0.18</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <priority>350</priority>
+  </metadata>
+  <configurationGroup name="TransferStudents" path="/I2CE">
+    <configurationGroup name="tasks" path="/I2CE/tasks/task_description" locale="en_US">
+      <configuration name="can_transfer_student" locale="en_US">
+        <value>Can Rejoin Student</value>
+      </configuration>      
+    </configurationGroup>
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+        <version>4.2.0.18</version>
+        <configurationGroup name="person">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <status>uniquemerge:true</status>
+              <value>transfer</value>
+            </configuration>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="transfer">
+          <displayName>Transfered Students</displayName>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>IHS_StudentTransfer</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Transfer Student</value>
+          </configuration>
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <status>uniquemerge:true</status>
+              <value>banked_credits_carried</value>
+            </configuration>
+          </configurationGroup>                          
+        </configurationGroup>
+        <configurationGroup name="banked_credits_carried">
+          <displayName>Carried Banked Credits</displayName>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>IHS_BankedCreditsCarried</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Carried Banked Credits</value>
+          </configuration>
+        </configurationGroup>        
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <version>4.2.0.18</version>
+        <configurationGroup name="IHS_StudentTransfer">
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="source_institution">
+              <displayName>The field 'source_institution'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>training_institution</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Previous Institution</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="source_institution_non_ahti">
+              <displayName>The field 'source_institution_non_ahti'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Previous Institution</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="destination_institution">
+              <displayName>The field 'source_institution'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>training_institution</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:New Institution</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="source_program">
+              <displayName>The field 'source_program'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>training_program</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Old Program</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="source_program_non_ahti">
+              <displayName>The field 'source_program_non_ahti'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Program Taking In previous Institution</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="destination_program">
+              <displayName>The field 'source_program'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>training_program</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:New Program</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="source_registration">
+              <displayName>The field 'source_registration'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>registration</value>
+                </configuration>                
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="destination_registration">
+              <displayName>The field 'destination_registration'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>registration</value>
+                </configuration>                
+              </configurationGroup>
+            </configurationGroup>
+            <configurationGroup name="source_semester">
+              <displayName>The field 'source_semester'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>semester</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Source Semester</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="destination_semester">
+              <displayName>The field 'destination_semester'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>semester</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:New Semester</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="destination_level">
+              <displayName>The field 'destination_level'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>academic_level</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:New Level</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="academic_year">
+              <displayName>The field 'destination_level'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Academic Year Transfered</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="destination_admission_type">
+              <displayName>The field 'destination_admission_type'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>admission_type</value>
+                </configuration>                
+              </configurationGroup>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:New Admission Type</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="transfer_date">
+              <displayName>The field 'transfer_date'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_YMD</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default Value as an eval string</displayName>
+                <value>I2CE_Date::blank()</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Date Transfered/Date Joining New Program/Institution</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>                       
+        </configurationGroup>
+        <!--IHS_StudentTransfer-->
+        <configurationGroup name="IHS_BankedCreditsCarried">
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="registration">
+              <displayName>The field 'registration'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="students_results_grade">
+              <displayName>The field 'students_results_grade'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>                      
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="page">
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+      <configurationGroup name="transfer_options">
+        <displayName>Transfer Options</displayName>
+        <description>The page 'transfer_options' which is used to add and remove students from a scheduled training instance.</description>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configuration name='class' values='single'>
+          <version>4.2.0.3</version>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormTransferOptions</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Transfer Options</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <value>transfer_options.html</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_can_edit</value>
+          </configuration>          
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="transfer_ahti">
+        <version>4.2.0.4</version>
+        <displayName>Transfer A Student From Another AHTI</displayName>
+        <description>The page 'transfer_ahti' which is used to add and remove students from a scheduled training instance.</description>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configuration name='class' values='single'>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormTransferAHTI</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Search Student</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <value>transfer_ahti.html</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_can_edit</value>
+          </configuration>          
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="transfer_ahti_process">
+        <version>4.2.0.10</version>
+        <displayName>Process Student Transfered From Another AHTI</displayName>
+        <description>The page 'transfer_ahti_process' which is used to add and remove students from a scheduled training instance.</description>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configuration name='class' values='single'>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormTransferAHTIProcess</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Transfer Process</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <value>transfer_details.html</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_can_edit</value>
+          </configuration>          
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="transfer_non_ahti">
+        <version>4.2.0.4</version>
+        <displayName>Transfer A Student From Another AHTI</displayName>
+        <description>The page 'transfer_ahti' which is used to add and remove students from a scheduled training instance.</description>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configuration name='class' values='single'>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormTransferNonAHTI</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Transfer Non AHTI</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <value>transfer_non_ahti.html</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>person_can_edit</value>
+          </configuration>          
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="transfer_banked_credits">
+        <version>4.2.0.16</version>
+        <displayName>Process Student Transfered From Another AHTI</displayName>
+        <description>The page 'transfer_banked_credits' which is used to transfer course grades from previous program and exempt courses.</description>
+        <configuration name="style" values="single">
+          <value>shell</value>
+        </configuration>
+        <configuration name='class' values='single'>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormTransferBankedCredits</value>
+        </configuration>
+        <configurationGroup name="args">
+          <configuration name="title" values="single" locale="en_US">
+            <value>Transfer Banked Credits</value>
+          </configuration>
+          <configuration name="defaultHTMLFile" values="single">
+            <value>transfer_banked_credits.html</value>
+          </configuration>
+          <configuration name="tasks" values="many">
+            <value>can_transfer_student</value>
+          </configuration>          
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

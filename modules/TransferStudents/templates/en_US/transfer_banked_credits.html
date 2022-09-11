@@ -1,0 +1,45 @@
+<div id="siteContent">
+<div id="error" />
+<h3>
+	      Transfer Details For <span type="form" name="person:surname" noedit="true"></span>,<span type="form" name="person:firstname" noedit="true"></span>
+	    </h3>
+<table border="0" cellpadding="0" cellspacing="0" class="multiFormTable">
+	<tr>
+		<th colspan="2">Student Transfer Details</th>
+   </tr>
+	<tr>
+		<td>
+      	<span type="form" name="transfer:source_program" noedit="true" showhead="default"></span>
+			<span type="form" name="transfer:source_institution" noedit="true" showhead="default"></span>
+			<span type="form" name="transfer:source_semester" noedit="true" showhead="default"></span>
+			<span type="form" name="transfer:destination_program" noedit="true" showhead="default"></span>
+			<span type="form" name="transfer:destination_institution" noedit="true" showhead="default"></span>
+			<span type="form" name="transfer:destination_semester" noedit="true" showhead="default"></span>
+			<span type="form" name="transfer:destination_admission_type" noedit="true" showhead="default"></span>
+		</td>
+	</tr>
+</table>
+<p>
+<form  method="post" action="transfer_banked_credits">
+        <span type="form" name="person:id"></span>
+<div id="form">
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <th colspan="2">Select Courses To Exempt And Courses Credits To Carry</th>
+    </tr>
+	<tr id="list_fields">
+		<td id="students_results">
+		
+		</td>
+		<td id="exempt_courses">
+				
+		</td>
+	</tr>
+	
+    <tr class="submitCell">
+        <td colspan="2">
+            <div id="button"><input type="submit" name="save" value="Save"></div>
+        </td>
+    </tr>
+	</table>
+</div>

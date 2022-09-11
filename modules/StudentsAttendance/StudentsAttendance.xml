@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name='IHSStudentsAttendance'>     
+  <metadata>
+    <displayName>Attendance Information</displayName>   
+    <category>Demo Category</category>
+    <className>IHS_Module_Attendance</className>
+    <description>Adds Attendance info</description>
+    <version>4.2.0.13</version>
+    <path name='classes'>
+      <value>./lib</value>
+    </path>
+    <path name='templates'>
+      <value>./templates</value>
+    </path>
+    <priority>350</priority>
+  </metadata>
+  
+  <configurationGroup name='Attendance' path='/I2CE'>
+    <displayName>Attendance</displayName>
+    <configurationGroup name='tasks' path='/I2CE/tasks/task_description' >
+      <configuration name='person_can_view_child_form_attendance' locale="en_US">
+        <value>Person Can View Attendance</value>
+      </configuration>
+      <configuration name='person_can_edit_child_form_attendance' locale="en_US">
+        <value>Person Can Edit Attendance</value>
+      </configuration>
+    </configurationGroup>    
+    <configurationGroup name="yesno-data" path="/I2CE/formsData/forms/yesno">
+      <version>4.2.0.13</version>
+      <configurationGroup name="yes">
+	     <configuration name="last_modified">
+          <value>2014-04-16 12:25:30</value>
+	     </configuration>
+	     <configuration name="who">
+          <value>1</value>
+	     </configuration>
+	     <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Yes</value>
+          </configuration>
+	     </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="no">
+	     <configuration name="last_modified">
+          <value>2014-04-16 12:25:30</value>
+	     </configuration>
+	     <configuration name="who">
+          <value>1</value>
+	     </configuration>
+	     <configurationGroup name="fields">
+          <configuration name="name">
+            <value>No</value>
+          </configuration>
+	     </configurationGroup>
+      </configurationGroup>            
+    </configurationGroup>
+    <configurationGroup name='forms' path='/modules/forms/forms'>
+      <version>4.2.0.13</version>
+      <displayName>Forms available to the form factory</displayName>
+      <configurationGroup name="person">
+          <configurationGroup name="meta">
+            <configuration name="child_forms" values="many">
+              <status>uniquemerge:true</status>
+              <value>attendance</value>
+            </configuration>
+          </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name='attendance'>
+        <displayName>Attendance</displayName>
+        <description>The Attendance Form</description>
+        <configuration name='class' values='single'>
+          <displayName>Class Name</displayName>
+          <description>The name of the class Defining The Logic Of This Form</description>
+          <value>IHS_Attendance</value>
+        </configuration> 
+      </configurationGroup>
+      <configurationGroup name='yesno'>
+        <displayName>Attendance</displayName>
+        <description>The Attendance Form</description>
+        <configuration name='class' values='single'>
+          <displayName>Class Name</displayName>
+          <description>The name of the class Defining The Logic Of This Form</description>
+          <value>I2CE_SimpleList</value>
+        </configuration>
+        <configuration name='storage'>
+	       <value>magicdata</value>
+	     </configuration>
+      </configurationGroup>  
+    </configurationGroup> <!-- End /modules/forms/forms-->    
+    
+    <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+      <version>4.2.0.13</version>
+      <displayName>Form Class Configuration</displayName>    
+      <configurationGroup name="IHS_Attendance">
+        <displayName>Configuration for the class 'IHS_Attendance' which adds the profession field to the person form</displayName>
+        <configuration name="extends">
+          <displayName>The class this form extends</displayName>
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <version>4.2.0.13</version>
+          <displayName>The fields defined for this form.</displayName>
+          <configurationGroup name="out_of_inst">
+            <displayName>The fields 'out_of_inst'</displayName>
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>MAP</value>
+            </configuration>
+            <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>yesno</value>
+                </configuration>                
+            </configurationGroup>          
+            <configuration name="headers" type="delimited">
+              <displayName>The headers for this field.</displayName>
+              <value>default:Is This Student Out Of Institution For 21 Days?</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>            
+          </configurationGroup> <!-- out_of_inst-->                                           
+        </configurationGroup> <!-- fields -->
+      </configurationGroup>
+    </configurationGroup>
+    
+    <configurationGroup name="page">
+      <version>4.2.0.13</version>
+      <configurationGroup name="attendance">
+        <displayName>Attendance Page</displayName>
+        <description>The page 'attendance' which has the action of: Attendance Change</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormAttendance</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Attendance</value>
+          </configuration>          
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>attendance</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+ </I2CEConfiguration>

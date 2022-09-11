@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name='IHSStudentDropSemester'>     
+  <metadata>
+    <displayName>Student Drop Semester</displayName>   
+    <category>Application Component</category>
+    <description>Drop A Student From A Specific Semester</description>
+    <version>4.2.0.1</version>
+    <path name='templates'>
+      <value>./templates</value>
+    </path>
+    <requirement name="StudentDropSemester">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <priority>450</priority>
+  </metadata>
+</I2CEConfiguration>

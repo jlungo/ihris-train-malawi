@@ -1,0 +1,55 @@
+<div id="siteContent">
+<script type="text/javascript">
+function verify()
+{
+var error_found=false;
+var len=document.getElementsByClassName("results").length;
+
+for (k=0;k<len;k++)
+{
+var value=document.getElementsByClassName("results")[k].value;
+var inputname=document.getElementsByClassName("results")[k].name;
+
+//clear error msgs first
+document.getElementById(inputname).innerHTML="";
+
+if(value!=NaN && isNaN(value) && value!="i" && value!="I")
+{
+document.getElementById(inputname).innerHTML="This is not a number ";
+error_found=true;
+}
+
+value=parseFloat(value);
+//check if the mark enterd exceeds the assessment max mark and display an error
+if(!isNaN(value) && 100 < value)
+{
+document.getElementById(inputname).innerHTML="Mark Exceeds 100";
+error_found=true;
+}
+
+}
+
+if(error_found==true)
+return false;
+
+if(error_found==false) {
+	document.getElementById("save").disabled=true;
+	document.getElementById("add_results").submit();
+	}
+}
+
+</script>
+  <p>
+    <h2 id="title"></h2>
+    <div id="errmsg"></div>
+<form name="add_results" method="POST" action="add_results_process" id="add_results">
+    <div id='students_list'>
+    
+    </div>
+<div id="hidden_data">
+
+</div>
+</form>
+  </p>
+ 
+</div>

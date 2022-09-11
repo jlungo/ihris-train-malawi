@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="IHSRoles">
+  <metadata>
+    <displayName>Students Tracking System Roles</displayName>
+    <category>Application Component</category>
+    <description>Definition of new roles</description>
+    <link>https://launchpad.net/ihris-ihs</link>
+    <version>4.2.0.52</version>
+    <requirement name="STSRoles">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="IHSRoles" path="/I2CE">
+    <configurationGroup name="roles" path="formsData/forms/role">
+      <displayName>Roles</displayName>
+      <description>The list of roles for students tracking system</description>
+      <version>4.2.0.46</version>
+      <configurationGroup name="level_coordinator">
+        <configurationGroup name="fields">
+          <configuration name="name" values="single">
+            <value>Level Coordinator</value>
+          </configuration>
+          <configuration name="assignable">
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="academic_administrator">
+        <configuration name="last_modified">
+          <value>2014-04-27 12:00:00</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name" values="single">
+            <value>Academic Administrator</value>
+          </configuration>
+          <configuration name="assignable">
+            <value>0</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="ministry_ihs">
+        <configuration name="last_modified">
+          <value>2014-04-27 12:00:00</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name" values="single">
+            <value>Ministry-IHS</value>
+          </configuration>
+          <configuration name="assignable">
+            <value>1</value>
+          </configuration>
+          <configuration name="trickle_up">
+            <value>ministry_administrator</value>
+        	 </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="ministry_administrator">
+        <configuration name="last_modified">
+          <value>2014-04-27 12:00:00</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <configuration name="name" values="single">
+            <value>Ministry-Administrator</value>
+          </configuration>
+          <configuration name="assignable">
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <!-- roles -->
+    
+    <configurationGroup name="role_trickle_down" path="tasks/role_trickle_down">
+      <configuration name="student" values="many">
+        <version>4.2.0.35</version>
+        <value>person_can_view_child_form_attendance</value>
+        <value>person_can_view_child_form_course_exemption</value>
+      </configuration>
+      <configuration name="registrar" values="many">
+        <version>4.2.0.49</version>
+        <value>person_can_view_child_form_attendance</value>
+        <value>can_print_transcript</value>
+        <value>can_rejoin_student</value>
+        <value>can_manage_academic</value>
+        <value>can_transfer_student</value>
+        <value>can_schedule_lecturer_results_upload</value>
+        <value>person_can_edit_child_form_attendance</value>
+        <value>person_can_view_child_form_course_exemption</value>
+        <value>can_assign_course_trainer</value>
+      </configuration>
+      <configuration name="principal" values="many">
+        <version>4.2.0.29</version>
+        <value>person_can_view</value>
+        <value>person_can_view_child_form_attendance</value>
+        <value>person_can_edit_child_form_attendance</value>
+        <value>person_can_view_child_form_course_exemption</value>
+      </configuration>
+      <configuration name="lecturer" values="many">
+        <version>4.2.0.29</version>
+        <value>person_can_view_child_form_attendance</value>
+        <value>person_can_edit_child_form_attendance</value>
+        <value>person_can_view_child_form_course_exemption</value>
+      </configuration>
+      <configuration name="hod" values="many">
+        <version>4.2.0.50</version>
+        <value>person_can_view_child_form_attendance</value>
+        <value>person_can_edit_child_form_attendance</value>
+        <value>person_can_edit_child_form_course_exemption</value>
+        <value>person_can_view_child_form_course_exemption</value>
+        <value>person_can_edit_child_form_enroll_course</value>
+        <value>person_can_view_child_form_enroll_course</value>
+        <value>person_can_edit_child_form_retake_postponed</value>
+        <value>person_can_view_child_form_retake_postponed</value>
+        <value>person_can_edit_child_form_registration</value>
+      </configuration>
+      <configuration name="level_coordinator" values="many">
+        <version>4.2.0.29</version>
+        <value>can_approve_enrolled_courses</value>
+        <value>person_can_view_child_form_enroll_course</value>
+        <value>person_can_edit_child_form_enroll_course</value>
+        <value>person_can_view_child_form_registration</value>
+        <value>person_can_view_child_form_drop_semester</value>
+        <value>drop_semester_can_view_child_form_resume_semester</value>
+        <value>person_can_view_child_form_course_exemption</value>
+        <value>person_can_view</value>
+        <value>custom_reports_can_access</value>
+      </configuration>
+      <configuration name="academic_administrator" values="many">
+        <version>4.2.0.29</version>
+        <value>can_edit_database_list_training_program</value>
+        <value>can_edit_database_list_training</value>
+        <value>can_manage_academic</value>
+        <value>can_add_lecturer</value>
+        <value>can_assign_course_trainer</value>
+      </configuration>
+      <configuration name="ministry_ihs" values="many">        
+        <version>4.2.0.39</version>
+        <value>can_edit_database_list_department</value>
+        <value>can_manage_academic</value>
+        <value>can_view_reschedule_course</value>
+        <value>can_view_database_list_department</value>
+        <value>can_edit_database_list_training_program</value>
+        <value>can_view_database_list_training_program</value>
+        <value>can_edit_database_list_course_type</value>
+        <value>can_edit_database_list_training</value>
+        <value>can_view_database_list_course_type</value>
+        <value>can_configure_system</value>
+        <value>can_add_lecturer</value>
+        <value>can_view_trainer_assigned_courses</value>
+        <value>can_view_person_students_view_results</value>
+        <value>custom_reports_can_view_reportViews</value>
+        <value>person_can_view_child_form_students_results_grade</value>
+        <value>person_can_view_child_form_overall_GPA</value>
+        <value>person_can_view_child_form_demographic</value>
+        <value>person_can_edit_child_form_demographic</value>
+        <value>person_can_view_child_form_registration</value>
+        <value>person_can_view_child_form_drop_semester</value>
+        <value>person_can_view_child_form_enroll_course</value>
+        <value>drop_semester_can_view_child_form_resume_semester</value>
+        <value>custom_reports_can_access</value>
+      </configuration>
+      <configuration name="ministry_administrator" values="many">        
+        <version>4.2.0.41</version>
+        <value>can_edit_database_list_department</value>
+        <value>can_edit_database_lists</value>
+        <value>can_manage_academic</value>
+        <value>can_view_reschedule_course</value>
+        <value>can_view_database_list_department</value>
+        <value>can_edit_database_list_training_program</value>
+        <value>can_view_database_list_training_program</value>
+        <value>can_edit_database_list_course_type</value>
+        <value>can_edit_database_list_training</value>
+        <value>can_view_database_list_course_type</value>
+        <value>can_configure_system</value>
+        <value>can_add_lecturer</value>
+        <value>can_view_trainer_assigned_courses</value>
+        <value>can_view_person_students_view_results</value>
+        <value>custom_reports_can_access_relationships</value>
+        <value>custom_reports_can_edit_relationships</value>
+        <value>can_view_magic_data_browser</value>
+        <value>tasks_and_roles_can_access</value>
+        <value>can_view_background_processes</value>
+        <value>cached_forms_can_administer</value>
+        <value>can_create_or_edit_users</value>
+        <value>users_can_edit_all</value>
+        <value>can_view_user_statistics</value>
+        <value>custom_reports_can_view_reportViews</value>
+        <value>person_can_view_child_form_students_results_grade</value>
+        <value>person_can_view_child_form_overall_GPA</value>
+        <value>person_can_view_child_form_demographic</value>
+        <value>person_can_edit_child_form_demographic</value>
+        <value>person_can_view_child_form_registration</value>
+        <value>person_can_view_child_form_drop_semester</value>
+        <value>person_can_view_child_form_enroll_course</value>
+        <value>drop_semester_can_view_child_form_resume_semester</value>
+        <value>custom_reports_can_access</value>
+      </configuration>
+    </configurationGroup>          
+  </configurationGroup>
+</I2CEConfiguration>

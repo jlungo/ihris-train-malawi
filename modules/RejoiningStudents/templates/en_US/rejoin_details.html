@@ -1,0 +1,60 @@
+<div id="siteContent">
+<div>
+<div id="error" />
+<h3>
+	      Transfer Details For <span type="form" name="person:surname" noedit="true"></span>,<span type="form" name="person:firstname" noedit="true"></span>
+	    </h3>
+<table border="0" cellpadding="0" cellspacing="0" class="multiFormTable">
+	<tr>
+		<th colspan="2">Previous Student Details</th>
+   </tr>
+	<tr>
+		<td>
+			<span type="form" name="registration:semester" noedit="true" showhead="default"></span>
+			<span type="form" name="registration:registration_number" noedit="true" showhead="default"></span>
+			<span type="form" name="registration:training_program" noedit="true" showhead="default"></span>
+			<span type="form" name="registration:training_institution" noedit="true" showhead="default"></span>
+			<span type="form" name="registration:admission_type" noedit="true" showhead="default"></span>
+		</td>
+		<td>
+			<span type="form" name="discontinued:recommendations" noedit="true" showhead="default"></span>
+			<span type="form" name="discontinued:date_discontinued" noedit="true" showhead="default"></span>
+			<span type="form" name="discontinued:academic_year" noedit="true" showhead="default"></span>
+			<span type="form" name="discontinued:reason" noedit="true" showhead="default"></span>
+		</td>
+	</tr>
+</table>
+<p>
+<form  method="post" action="rejoining_student_process">
+        <span type="form" name="person:id"></span>
+<div id="form">
+    <h1>Enter New Student Details</h1>
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <th colspan="2">Enter Rejoin Details</th>
+    </tr>
+	<tr id="list_fields">
+		<td>
+		<span type="form" name="rejoin:parent" />
+		<span type="form" name="rejoin:academic_year_rejoin" showhead="default"></span>
+		<span type="form" name="rejoin:rejoin_semester" showhead="default"></span>
+		<span type="form" name="rejoin:rejoin_level" showhead="default"></span>
+		<span type="form" name="rejoin:rejoin_date" showhead="default"></span>
+		</td>
+		<td>
+		<span type="form" name="rejoin:new_training_prog" showhead="default"></span>
+		<span type="form" name="rejoin:new_training_inst" showhead="default"></span>
+		<span type="form" name="rejoin:new_admission_type" showhead="default"></span>
+		</td>
+	</tr>
+    <tr class="submitCell">
+        <td colspan="2">
+            <div id="button"><input type="submit" name="save" value="Save"></div>
+        </td>
+    </tr>
+	</table>
+    
+</div>
+    </form>
+</div>
+</div>

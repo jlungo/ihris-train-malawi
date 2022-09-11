@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="IHSLecturers">
+  <metadata>
+    <displayName>Lecturers Registration</displayName>
+    <category>Application Component</category>
+    <description>A Person's Training</description>
+    <className>IHS_Module_Lecturer</className>    
+    <creator>Ally Shaban</creator>
+    <email>allyshaban5@gmail.com</email>
+    <link>https://launchpad.net/ihris-train</link>
+    <version>4.2.0.4</version>
+    <requirement name="Lecturers">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>     
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <priority>400</priority>
+  </metadata>
+  <configurationGroup name="Lecturers" path="/I2CE">    
+    <configurationGroup name="identification-type-data" path="/I2CE/formsData/forms/identification_type">
+      <configurationGroup name="national_id">
+	     <configuration name="last_modified">
+          <value>2014-06-16 12:25:30</value>
+	     </configuration>
+	     <configuration name="who">
+          <value>1</value>
+	     </configuration>
+	     <configurationGroup name="fields">
+          <configuration name="name">
+            <value>RegNo Number</value>
+          </configuration>
+	     </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="passport">
+	     <configuration name="last_modified">
+          <value>2014-06-16 12:25:30</value>
+	     </configuration>
+	     <configuration name="who">
+          <value>1</value>
+	     </configuration>
+	     <configurationGroup name="fields">
+          <configuration name="name">
+            <value>Passport Number</value>
+          </configuration>
+	     </configurationGroup>
+      </configurationGroup>            
+    </configurationGroup>        
+    <configurationGroup name="page">
+      <version>4.2.0.4</version>
+      <configurationGroup name='add_lecturer'>
+        <displayName>Add Lecturer Page</displayName>
+        <description> The page 'add_lecturer' which has the action of: creating new lecturers,registrars,head of departments,principals,deputy principals etc</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormLecturer</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Drop Course To Trainer</value>
+          </configuration>
+	       <configuration name="defaultHTMLFile" values="single">
+           <value>form_add_lecturer.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>    
+  </configurationGroup>
+</I2CEConfiguration>

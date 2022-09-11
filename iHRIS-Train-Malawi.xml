@@ -1,0 +1,328 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="ihris-train-site">
+  <metadata>
+    <displayName>iHRIS Train</displayName>
+    <category>Site</category>
+    <description>the iHRIS Train Site</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>support@zalongwa.com</email>
+    <link>https://launchpad.net/ihris-train</link>
+    <version>4.2.1.30</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <requirement name="PersonArchivedScan">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="IHSStudentsEnrollcourse">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="IHSStudentsViewResults">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="CustomReports-full-enroll_course">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="CustomReports-full-search_person">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="CustomReports-full-overall_GPA">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="UserCronReports">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="CustomReports-full-pending_courses">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="CustomReports-full-semester_GPA">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="CustomReports-full-students_results_grade">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="CustomReports-full-training_courses">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="IHSStudentDropSemester">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="IHSCourseTypes">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="CourseExemption">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="StudentDropSemester">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="IHSRegistration">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement> 
+    <requirement name="IHSAssignCourseToTrainer">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="TransferStudents">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="RejoiningStudents">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="IHSStudentsAttendance">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="ihris-train">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="IHSRoles">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="IHSPerson">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="IHSCourseTypes">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="StudentDropSemester">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="IHSTrainerAddResults">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="IHSTrainingCourseExamTypesData">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="ResultsApproval">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement> 
+    <requirement name="ScheduleResultsUpload">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="IHSTrainerAddResults">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="RetakePostponed">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement> 
+    <requirement name="IHSTrainingProgram">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="IHSTraining">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="IHSLecturers">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="UserAccess">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="ihris-common-MassDeletePerson">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name='CustomReports-PrintedReportsODT'>
+      <atLeast version='4.2'/>
+      <lessThan version='4.3'/>
+    </requirement>
+    <requirement name="STSTraining">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="IHSTrainingProgram">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="TrainAccessInstitution">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="TrainAccessProvider">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="Import">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <requirement name="TrainDashboard">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <enable name="accident" />
+    <enable name="Bond" />
+    <enable name="Trainingcost" />
+    <enable name="name-Titles" />
+    <enable name="PersonPassportPhoto" />
+    <enable name="customised-Village" />
+    <enable name="tasks-roles" />
+    <enable name="TrainingProvider" />
+    <enable name="ReportArchiver" />
+    <enable name="deleteRecord" />
+    <enable name="magicDataBrowser" />
+    <enable name="StretchPage" />
+    <enable name="localeSelector" />
+    <enable name="iso-country" />
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="css">
+      <value>./css</value>
+    </path>
+    <path name="scripts">
+      <value>./scripts</value>
+    </path>
+    <path name="modules">
+      <value>./modules</value>
+    </path>
+    <path name="images">
+      <value>./images</value>
+    </path>
+    <path name="pages">
+      <value>./pages</value>
+    </path>
+    <priority>400</priority>
+  </metadata>
+  <erase path="/modules/CustomReports/search_reports/search_training_provider">
+  	 <lessThan version="4.2.8" />
+  </erase>
+  <configurationGroup name="ihris-train-site" path="/I2CE">
+    <displayName>iHRIS Train Site</displayName>
+    <status>advanced:false</status>
+    <configurationGroup name="page">
+      <version>4.2.9</version>
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+      <configurationGroup name="user">
+        <displayName>User Page</displayName>
+        <description>The page 'user' which has the action of: Manage Users/Access</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormUser</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="feedback">
+      <displayName>Feedback Information</displayName>
+      <status>required:false</status>
+      <configuration name="email" path="to" values="single">
+        <displayName>Email Address</displayName>
+        <value>support@zalongwa.com</value>
+      </configuration>
+      <configuration name="subject" values="single" locale="en_US">
+        <displayName>Subject Line</displayName>
+        <value>iHRIS Train</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="cache_times">
+      <displayName>Cache Times</displayName>
+      <description>Override caching times for this site.</description>
+      <status>advanced:true</status>
+      <configuration name="stale" path="/I2CE/update/times/stale">
+        <displayName>Stale Time</displayName>
+        <description>The time in seconds we wait until we check that the configuration files for the system and the modules are up to date. Defaults to 10. If negative, we check the system files on each page request</description>
+        <status>required:true</status>
+        <value>30</value>
+      </configuration>
+      <configuration name="stale_time" path="/I2CE/fileSearch/stale_time">
+        <displayName>Stale Time</displayName>
+        <description>The time in seconds until a file found in the file search utility is considered stale. If stale, it will search for the file, if not stale, it will use the previously found location of the file (it will cache the file location). If negative, then we do not cache the file location.</description>
+        <status>required:true</status>
+        <value>1800</value>
+      </configuration>
+      <configuration name="cache_time" path="/modules/FileDump/cache_time">
+        <displayName>Cache Time</displayName>
+        <description>The time (in minutes) to cache content</description>
+        <status>required:true</status>
+        <value>60</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="template">
+      <displayName>Template Information</displayName>
+      <description>Various Default Information About The Templating System</description>
+      <status>advanced:false</status>
+      <status>required:true</status>
+      <configuration name="prefix_title" values="single" locale="en_US">
+        <displayName>Page title prefix</displayName>
+        <description>Page titile prefix</description>
+        <value>iHRIS Train Malawi</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="search_reports" path="/modules/CustomReports/search_reports">
+      <displayName>Search Reports</displayName>
+      <version>4.2.8</version>
+      <configuration name="search_people" values="many" type="delimited" locale="en_US">
+        <displayName>The search people report.</displayName>
+        <value>name:Search Students</value>
+        <value>description:Locate any person's record in the system to review, print or update.</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name="pdf_options" path="/modules/report-pdf/PDF/display-options">
+      <displayName>PDF Options</displayName>
+      <status>visible:false</status>
+      <configurationGroup name="header">
+        <displayName>Header Options</displayName>
+        <configuration name="text" locale="en_US">
+          <displayName>Header Text</displayName>
+          <value>iHRIS Train</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="custom_report_pdf_options" path="/modules/CustomReports/displays/PDF/display_options">
+      <displayName>PDF Options</displayName>
+      <configurationGroup name="header">
+        <displayName>Header Options</displayName>
+        <configuration name="text_prefix" locale="en_US">
+          <displayName>Header Text</displayName>
+          <value>Institutes Of Health Science</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

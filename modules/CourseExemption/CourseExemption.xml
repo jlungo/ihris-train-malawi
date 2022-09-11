@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name='CourseExemption'>     
+  <metadata>
+    <displayName>Student Course Exemption</displayName>   
+    <category>Application Component</category>
+    <className>IHS_Module_CourseExemption</className>
+    <description>Exempt A Student From A Specific Courses</description>
+    <version>4.2.0.9</version>
+    <path name='classes'>
+      <value>./lib</value>
+    </path>
+    <path name='templates'>
+      <value>./templates</value>
+    </path>
+    <priority>350</priority>
+  </metadata>
+  <configurationGroup name='CourseExemption' path='/I2CE'>
+    <displayName>Student Course Exemption</displayName>
+    <configurationGroup name='tasks' path='/I2CE/tasks/task_description' >
+      <configuration name='person_can_view_child_form_course_exemption' locale="en_US">
+        <value>Person Can View Course Exemption</value>
+      </configuration>
+      <configuration name='person_can_edit_child_form_course_exemption' locale="en_US">
+        <value>Person Can Edit Course Exemption</value>
+      </configuration>
+    </configurationGroup>
+    <configurationGroup name='forms' path='/modules/forms/forms'>
+      <displayName>Forms available to the form factory</displayName>
+      <configurationGroup name="person">
+        <configurationGroup name="meta">
+         <configuration name="child_forms" values="many">
+           <status>uniquemerge:true</status>
+           <value>course_exemption</value>
+         </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name='course_exemption'>
+        <displayName>Course Exemption</displayName>
+        <description>The Drop Semester Form</description>
+        <configuration name='class' values='single'>
+          <displayName>Class Name</displayName>
+          <description>The name of the class Defining The Logic Of This Form</description>
+          <value>IHS_CourseExemption</value>
+        </configuration> 
+      </configurationGroup>
+    </configurationGroup> <!-- End /modules/forms/forms-->
+    <configurationGroup name="formClasses" path="/modules/forms/formClasses">
+      <displayName>Form Class Configuration</displayName>    
+      <configurationGroup name="IHS_CourseExemption">
+        <displayName>Configuration for the class 'IHS_CourseExemption'</displayName>
+        <configuration name="extends">
+          <displayName>The class this form extends</displayName>
+          <value>I2CE_Form</value>
+        </configuration>
+        <configurationGroup name="fields">
+          <version>4.2.0.9</version>
+          <displayName>The fields defined for this form.</displayName>
+          <configurationGroup name="training">
+            <displayName>The fields 'training'</displayName>
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>MAP_MULT</value>
+            </configuration>
+            <configuration name="headers" type="delimited">
+              <displayName>The headers for this field.</displayName>
+              <value>default:Training Course</value>
+            </configuration>
+            <configuration name="required" type="boolean">
+              <value>true</value>
+            </configuration>            
+          </configurationGroup>
+          <configurationGroup name="registration">
+            <displayName>The field 'semester'</displayName>
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+              <displayName>The headers for this field.</displayName>
+              <value>default:Registration</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="date_exempted">
+           <configuration name="formfield">
+             <displayName>The form field type</displayName>
+             <value>DATE_YMD</value>
+           </configuration>            
+           <configuration name="default_eval">
+             <value>I2CE_Date::blank()</value>
+           </configuration>
+           <configuration name="headers" type="delimited" locale="en_US">
+             <displayName>The headers for this field.</displayName>
+             <value>default:Date Exempted</value>                
+           </configuration>
+           <configuration name="required" type="boolean">
+              <value>true</value>
+           </configuration>
+          </configurationGroup>
+          <configurationGroup name="exemption_reason">
+           <configuration name="formfield">
+             <displayName>The form field type</displayName>
+             <value>STRING_MLINE</value>
+           </configuration>
+           <configuration name="headers" type="delimited" locale="en_US">
+             <displayName>The headers for this field.</displayName>
+             <value>default:Exemption Reasons</value>                
+           </configuration>
+           <configuration name="required" type="boolean">
+              <value>true</value>
+           </configuration>
+          </configurationGroup>
+          <configurationGroup name="training_institution">
+            <displayName>The fields 'training_institution'</displayName>
+            <configuration name="formfield">
+              <displayName>The form field type</displayName>
+              <value>MAP</value>
+            </configuration>
+            <configuration name="headers" type="delimited" locale="en_US">
+             <displayName>The headers for this field.</displayName>
+             <value>default:Training Institution</value>                
+           </configuration>
+           <configuration name="required" type="boolean">
+              <value>true</value>
+           </configuration>
+          </configurationGroup>                                           
+        </configurationGroup> <!-- fields -->
+      </configurationGroup>
+    </configurationGroup>
+    
+    <configurationGroup name="page">
+      <configurationGroup name="course_exemption">
+        <displayName>Course Exemption Page</displayName>
+        <description>The page 'course_exemption' which has the action of: Dropping A Semester</description>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configuration name="class" values="single">
+          <version>4.2.0.5</version>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormCourseExemption</value>
+        </configuration>
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Course Exemption</value>
+          </configuration>          
+          <configuration name="page_form" values="single">
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>course_exemption</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+ </I2CEConfiguration>

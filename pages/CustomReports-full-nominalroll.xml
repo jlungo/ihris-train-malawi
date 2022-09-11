@@ -1,0 +1,769 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="CustomReports-full-nominalroll">
+  <metadata>
+    <displayName>Relationship: nominalroll</displayName>
+    <description>Relationship 'nominalroll' and all reports and report views.</description>
+    <version>4.0.11.2016.12.02</version>
+  </metadata>
+  <erase path="/modules/CustomReports/relationships/nominalroll">
+    <lessThan version="4.0.11.2016.12.02" />
+  </erase>
+  <erase path="/modules/CustomReports/reports/nominalroll">
+    <lessThan version="4.0.11.2016.12.02" />
+  </erase>
+  <erase path="/modules/CustomReports/reportViews/1472764377">
+    <lessThan version="4.0.11.2016.12.02" />
+  </erase>
+  <configurationGroup name="CustomReports-full-nominalroll" path="/modules/CustomReports">
+    <configurationGroup name="nominalroll" path="//modules/CustomReports/relationships/nominalroll">
+      <displayName>Export</displayName>
+      <configuration name="description" locale="en_US">
+        <displayName>Description</displayName>
+        <value>Nominal Roll Information</value>
+      </configuration>
+      <configuration name="display_name" locale="en_US">
+        <displayName>Display Name</displayName>
+        <value>Nominal Roll</value>
+      </configuration>
+      <configuration name="form">
+        <displayName>Form</displayName>
+        <value>person</value>
+      </configuration>
+      <configurationGroup name="joins">
+        <displayName>Joins</displayName>
+        <configurationGroup name="registration">
+          <displayName>Registration</displayName>
+          <configuration name="description" locale="en_US">
+            <displayName>Description</displayName>
+            <value>Registration Information</value>
+          </configuration>
+          <configuration name="display_name" locale="en_US">
+            <displayName>Display Name</displayName>
+            <value>Registration</value>
+          </configuration>
+          <configuration name="form">
+            <displayName>Form</displayName>
+            <value>registration</value>
+          </configuration>
+          <configuration name="join_style">
+            <displayName>Join Style</displayName>
+            <value>child</value>
+          </configuration>
+          <configuration name="limit_one">
+            <displayName>Limit One</displayName>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="nominalroll" path="//modules/CustomReports/reports/nominalroll">
+      <displayName>Export</displayName>
+      <configurationGroup name="meta">
+        <displayName>Meta</displayName>
+        <configuration name="category">
+          <displayName>Category</displayName>
+          <value>Students Reports</value>
+        </configuration>
+        <configuration name="description" locale="en_US">
+          <displayName>Description</displayName>
+          <value>Nominal Roll Information</value>
+        </configuration>
+        <configuration name="display_name" locale="en_US">
+          <displayName>Display Name</displayName>
+          <value>Nominal Roll</value>
+        </configuration>
+      </configurationGroup>
+      <configuration name="relationship">
+        <displayName>Relationship</displayName>
+        <value>nominalroll</value>
+      </configuration>
+      <configurationGroup name="reporting_forms">
+        <displayName>Reporting Forms</displayName>
+        <configurationGroup name="primary_form">
+          <displayName>Primary Form</displayName>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="date_of_birth">
+              <displayName>Date Of Birth</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form_display">
+                <displayName>Form Display</displayName>
+                <value>0</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Date Of Birth</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+              <configuration name="target">
+                <displayName>Target</displayName>
+                <value>_blank</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="firstname">
+              <displayName>Firstname</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form_display">
+                <displayName>Form Display</displayName>
+                <value>0</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>First Name</value>
+              </configuration>
+              <configuration name="link">
+                <displayName>Link</displayName>
+                <value>view?id=</value>
+              </configuration>
+              <configuration name="link_append">
+                <displayName>Link Append</displayName>
+                <value>primary_form+id</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+              <configuration name="target">
+                <displayName>Target</displayName>
+                <value>_self</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="gender">
+              <displayName>Gender</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form_display">
+                <displayName>Form Display</displayName>
+                <value>0</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Gender</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+              <configuration name="target">
+                <displayName>Target</displayName>
+                <value>_blank</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="othername">
+              <displayName>Othername</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form_display">
+                <displayName>Form Display</displayName>
+                <value>0</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Other Names</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+              <configuration name="target">
+                <displayName>Target</displayName>
+                <value>_blank</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="surname">
+              <displayName>Surname</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form_display">
+                <displayName>Form Display</displayName>
+                <value>0</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Surname</value>
+              </configuration>
+              <configuration name="link">
+                <displayName>Link</displayName>
+                <value>view?id=</value>
+              </configuration>
+              <configuration name="link_append">
+                <displayName>Link Append</displayName>
+                <value>primary_form+id</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+              <configuration name="target">
+                <displayName>Target</displayName>
+                <value>_self</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="title">
+              <displayName>Title</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form_display">
+                <displayName>Form Display</displayName>
+                <value>0</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Title</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+              <configuration name="target">
+                <displayName>Target</displayName>
+                <value>_blank</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="village">
+              <displayName>Village</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form_display">
+                <displayName>Form Display</displayName>
+                <value>0</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Home Village</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+              <configuration name="target">
+                <displayName>Target</displayName>
+                <value>_blank</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+        <configurationGroup name="registration">
+          <displayName>Registration</displayName>
+          <configuration name="drop_empty">
+            <displayName>Drop Empty</displayName>
+            <value>0</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>Fields</displayName>
+            <configurationGroup name="academic_level">
+              <displayName>Academic Level</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form_display">
+                <displayName>Form Display</displayName>
+                <value>0</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Current Level</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <displayName>Limits</displayName>
+                <configurationGroup name="equals">
+                  <displayName>Equals</displayName>
+                  <configuration name="allow_pivot">
+                    <displayName>Allow Pivot</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Current Level</value>
+                  </configuration>
+                  <configuration name="pivot">
+                    <displayName>Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+              <configuration name="target">
+                <displayName>Target</displayName>
+                <value>_blank</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="academic_year">
+              <displayName>Academic Year</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form_display">
+                <displayName>Form Display</displayName>
+                <value>0</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Registration Academic Year</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <displayName>Limits</displayName>
+                <configurationGroup name="between">
+                  <displayName>Between</displayName>
+                  <configuration name="allow_pivot">
+                    <displayName>Allow Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Registration Academic Year</value>
+                  </configuration>
+                  <configuration name="pivot">
+                    <displayName>Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+              <configuration name="target">
+                <displayName>Target</displayName>
+                <value>_blank</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="registration_date">
+              <displayName>Registration Date</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form_display">
+                <displayName>Form Display</displayName>
+                <value>0</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Registration Date</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <displayName>Limits</displayName>
+                <configurationGroup name="between">
+                  <displayName>Between</displayName>
+                  <configuration name="allow_pivot">
+                    <displayName>Allow Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Registration Date</value>
+                  </configuration>
+                  <configuration name="pivot">
+                    <displayName>Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+              <configuration name="target">
+                <displayName>Target</displayName>
+                <value>_blank</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="registration_number">
+              <displayName>Registration Number</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form_display">
+                <displayName>Form Display</displayName>
+                <value>0</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Registration Number</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <displayName>Limits</displayName>
+                <configurationGroup name="contains">
+                  <displayName>Contains</displayName>
+                  <configuration name="allow_pivot">
+                    <displayName>Allow Pivot</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Registration Number</value>
+                  </configuration>
+                  <configuration name="pivot">
+                    <displayName>Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+              <configuration name="target">
+                <displayName>Target</displayName>
+                <value>_blank</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="registration_status">
+              <displayName>Registration Status</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form_display">
+                <displayName>Form Display</displayName>
+                <value>0</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Registration Program</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+              <configuration name="target">
+                <displayName>Target</displayName>
+                <value>_blank</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="semester">
+              <displayName>Semester</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form_display">
+                <displayName>Form Display</displayName>
+                <value>0</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Registration Current Semester</value>
+              </configuration>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+              <configuration name="target">
+                <displayName>Target</displayName>
+                <value>_blank</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="sponsor">
+              <displayName>Sponsor</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form_display">
+                <displayName>Form Display</displayName>
+                <value>0</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Registration Sponsor</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <displayName>Limits</displayName>
+                <configurationGroup name="equals">
+                  <displayName>Equals</displayName>
+                  <configuration name="allow_pivot">
+                    <displayName>Allow Pivot</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Sponsor</value>
+                  </configuration>
+                  <configuration name="pivot">
+                    <displayName>Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+              <configuration name="target">
+                <displayName>Target</displayName>
+                <value>_blank</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="training_institution">
+              <displayName>Training Institution</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form_display">
+                <displayName>Form Display</displayName>
+                <value>0</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Registration Institution</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <displayName>Limits</displayName>
+                <configurationGroup name="equals">
+                  <displayName>Equals</displayName>
+                  <configuration name="allow_pivot">
+                    <displayName>Allow Pivot</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Training Institution</value>
+                  </configuration>
+                  <configuration name="pivot">
+                    <displayName>Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+              <configuration name="target">
+                <displayName>Target</displayName>
+                <value>_blank</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="training_program">
+              <displayName>Training Program</displayName>
+              <configuration name="enabled">
+                <displayName>Enabled</displayName>
+                <value>1</value>
+              </configuration>
+              <configuration name="form_display">
+                <displayName>Form Display</displayName>
+                <value>0</value>
+              </configuration>
+              <configuration name="header" locale="en_US">
+                <displayName>Header</displayName>
+                <value>Study Programme</value>
+              </configuration>
+              <configurationGroup name="limits">
+                <displayName>Limits</displayName>
+                <configurationGroup name="equals">
+                  <displayName>Equals</displayName>
+                  <configuration name="allow_pivot">
+                    <displayName>Allow Pivot</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="enabled">
+                    <displayName>Enabled</displayName>
+                    <value>1</value>
+                  </configuration>
+                  <configuration name="header" locale="en_US">
+                    <displayName>Header</displayName>
+                    <value>Study Programme</value>
+                  </configuration>
+                  <configuration name="pivot">
+                    <displayName>Pivot</displayName>
+                    <value>0</value>
+                  </configuration>
+                </configurationGroup>
+              </configurationGroup>
+              <configuration name="link_type">
+                <displayName>Link Type</displayName>
+                <value>link</value>
+              </configuration>
+              <configuration name="target">
+                <displayName>Target</displayName>
+                <value>_blank</value>
+              </configuration>
+            </configurationGroup>
+          </configurationGroup>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+    <configurationGroup name="1472764377" path="//modules/CustomReports/reportViews/1472764377">
+      <displayName>Export</displayName>
+      <configuration name="description" locale="en_US">
+        <displayName>Description</displayName>
+        <value>A List of All Students</value>
+      </configuration>
+      <configuration name="disable">
+        <displayName>Disable</displayName>
+        <value>0</value>
+      </configuration>
+      <configuration name="display_name" locale="en_US">
+        <displayName>Display Name</displayName>
+        <value>Nominal Roll</value>
+      </configuration>
+      <configuration name="display_order">
+        <displayName>Display Order</displayName>
+        <value>primary_form+title,primary_form+surname,primary_form+firstname,primary_form+gender,registration+academic_level,registration+registration_number,primary_form+date_of_birth,primary_form+othername,registration+training_institution,registration+training_program,registration+sponsor,primary_form+village,registration+registration_date,registration+academic_year,registration+registration_status,registration+semester</value>
+      </configuration>
+      <configurationGroup name="fields">
+        <displayName>Fields</displayName>
+        <configurationGroup name="primary_form+date_of_birth">
+          <displayName>Primary Form Date Of Birth</displayName>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="primary_form+firstname">
+          <displayName>Primary Form Firstname</displayName>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="primary_form+gender">
+          <displayName>Primary Form Gender</displayName>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="primary_form+surname">
+          <displayName>Primary Form Surname</displayName>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="registration+registration_date">
+          <displayName>Registration Registration Date</displayName>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="registration+registration_number">
+          <displayName>Registration Registration Number</displayName>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="registration+sponsor">
+          <displayName>Registration Sponsor</displayName>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="registration+training_institution">
+          <displayName>Registration Training Institution</displayName>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+        <configurationGroup name="registration+training_program">
+          <displayName>Registration Training Program</displayName>
+          <configuration name="aggregate">
+            <displayName>Aggregate</displayName>
+            <value>none</value>
+          </configuration>
+          <configuration name="enabled">
+            <displayName>Enabled</displayName>
+            <value>1</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+      <configuration name="report">
+        <displayName>Report</displayName>
+        <value>nominalroll</value>
+      </configuration>
+      <configuration name="total">
+        <displayName>Total</displayName>
+        <value>0</value>
+      </configuration>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

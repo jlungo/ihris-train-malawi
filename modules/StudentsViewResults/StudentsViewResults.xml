@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="IHSStudentsViewResults">
+  <metadata>
+    <displayName>Students Self View Semester Results</displayName>
+    <creator>Ally Shaban</creator>
+    <className>IHS_Module_StudentsViewResults</className>
+    <email>allyshaban5@gmail.com</email>
+    <category>Application Component</category>
+    <link>https://launchpad.net/ihris-train</link>
+    <version>4.2.0.1</version>
+    <requirement name="Person">
+      <atLeast version="4.2" />
+    </requirement>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <priority>400</priority>
+  </metadata>
+</I2CEConfiguration>

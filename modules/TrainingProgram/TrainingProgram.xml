@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="IHSTrainingProgram">
+  <metadata>
+    <displayName>Training Program</displayName>
+    <category>Application Component</category>
+    <description>Training Program</description>
+    <link>https://launchpad.net/ihris-train</link>
+    <version>4.2.0.35</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>>>
+    <requirement name="TrainingProgram">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+    <priority>400</priority>
+  </metadata>
+  <erase path="/modules/forms/formClasses/iHRIS_TrainingProgram/fields/total_semesters">
+    <lessThan version="4.2.0.34" />
+  </erase>
+  <erase path="/modules/forms/formClasses/iHRIS_TrainingProgram/fields/min_sem_credits">
+    <lessThan version="4.2.0.34" />
+  </erase>
+  <erase path="/modules/forms/formClasses/iHRIS_TrainingProgram/fields/max_sem_credits">
+    <lessThan version="4.2.0.34" />
+  </erase>
+  <configurationGroup name="IHSTrainingProgram" path="/I2CE">        
+    <configurationGroup name="forms" path="/modules/forms">
+      <version>4.2.0.33</version>
+      <configurationGroup name="forms">
+        <configurationGroup name="training_program" locale="en_US">
+          <displayName>Training Program</displayName>
+          <configuration name="class" values="single">
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>IHS_TrainingProgram</value>
+          </configuration>
+          <configuration name="display" values="single" locale="en_US">
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Training Program</value>
+          </configuration>                          
+        </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">
+        <configurationGroup name="IHS_TrainingProgram">
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>iHRIS_TrainingProgram</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <version>4.2.0.z12</version>
+            <displayName>The fields defined for this form</displayName>
+            <configurationGroup name="total_semesters_fulltime">
+              <displayName>The field 'total_semesters_fulltime'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Total Semesters Full-time Students</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="total_semesters_parttime">
+              <displayName>The field 'total_semesters_parttime'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Total Semesters Part-time Students</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="min_sem_credits_fulltime">
+              <displayName>The field 'min_sem_credits_fulltime'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Minimum Semester Credits Full-time Students</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="min_sem_credits_parttime">
+              <displayName>The field 'min_sem_credits_parttime'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Minimum Semester Credits Part-time Students</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="max_sem_credits_fulltime">
+              <displayName>The field 'max_sem_credits_fulltime'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Maximum Semester Credits Full-time Students</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="max_sem_credits_parttime">
+              <displayName>The field 'max_sem_credits_parttime'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Maximum Semester Credits Part-time Students</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>            
+          </configurationGroup>                       
+        </configurationGroup>
+        <!--iHRIS_TrainingProgram-->  
+      </configurationGroup>
+     </configurationGroup>
+    <configurationGroup name="page">
+      <version>4.2.0.13</version>
+      <configurationGroup name='training_program'>
+        <displayName>Add Training Program Page</displayName>
+        <description> The page 'training_program' which has the action of: defining new training program</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormTrainingProgram</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add Training Program</value>
+          </configuration>
+	       <configuration name="defaultHTMLFile" values="single">
+           <value>training_program.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+     </configurationGroup>             
+  </configurationGroup>
+</I2CEConfiguration>

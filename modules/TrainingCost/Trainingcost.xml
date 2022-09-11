@@ -1,0 +1,375 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="Trainingcost">
+  <metadata>
+    <displayName>Student Tracking System Person</displayName>
+    <category>Application Component</category>
+    <description>The Training Cost module customized according to the requirements of IHS</description>
+    <creator>Dr. Juma Lungo</creator>
+    <email>juma.lungo@zalongwa.com</email>
+    <link>https://launchpad.net/ihris-train</link>
+    <version>4.2.0.</version>   
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path> 
+    <priority>450</priority>
+  </metadata>
+  
+	  <configurationGroup name="Trainingcost" path="/I2CE">
+	  <displayName>Training Costs</displayName>
+	  
+	  <configurationGroup name='tasks' path='/I2CE/tasks/task_description' locale='en_US'>
+	    <configuration name='person_can_view_child_form_person_traincost'>
+		<value>Can view person_profdev child form of a person</value>
+	      </configuration>
+	      <configuration name='person_can_edit_child_form_person_traincost'>
+		<value>Can edit person_profdev child forms of a person</value>
+	      </configuration>
+	      <configuration name='person_can_view_child_form_person_continuous_traincost'>
+		<value>Can view person_continuous_profdev child form of a person</value>
+	      </configuration>
+	      <configuration name='person_can_edit_child_form_person_continuous_traincost'>
+		<value>Can edit person_continuous_profdev child forms of a person</value>
+	     </configuration>
+	  </configurationGroup>
+
+	  <configurationGroup name='tasks_trickle_down' path='/I2CE/tasks/task_trickle_down/'>
+	    <configuration name='person_can_view_child_form_person_traincost' values='many'> 
+		<value>person_can_view</value>
+	      </configuration>
+	      <configuration name='person_can_edit_child_form_person_traincost' values='many'> 
+		<value>person_can_view_child_form_person_profdev</value>
+		<value>person_can_view</value>
+	      </configuration>
+	      <configuration name='person_can_view_child_form_person_continuous_traincost' values='many'> 
+		<value>person_can_view</value>
+	      </configuration>
+	      <configuration name='person_can_edit_child_form_person_continuous_traincost' values='many'> 
+		<value>person_can_view_child_form_person_continuous_profdev</value>
+		<value>person_can_view</value>
+	      </configuration>
+	      <configuration name='person_can_view_child_forms' values='many'> 
+		 <value>person_can_view_child_form_person_profdev</value>
+		 <value>person_can_view_child_form_person_continuous_profdev</value>
+	      </configuration>
+	      <configuration name='person_can_edit_child_forms' values='many'> 
+		 <value>person_can_edit_child_form_person_profdev</value>
+	 	 <value>person_can_edit_child_form_person_continuous_profdev</value>
+	    </configuration>
+	  </configurationGroup>
+
+	  <configurationGroup name='forms' path='/modules/forms'>
+	     <displayName>Forms</displayName>
+	      <description>Information about the forms made available by Training Cost</description>
+ 
+      <configurationGroup name='forms'>
+        <displayName>Forms available to the form factory</displayName>
+        <status>advanced:true</status>
+        <status>required:true</status>
+
+        <!-- This section is to add a new form called person_traincost with the associated
+             class.  The class will be defined in the classes section below. 
+        -->
+        <configurationGroup name='person_traincost'>
+          <displayName>Person Training Cost</displayName>
+          <description>The Person Training Cost Form</description>
+          <configuration name='class' values='single'>
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_PersonTrainCost</value> <!-- the class name is iHRIS_PersonTrainCost-->
+          </configuration>
+          <configuration name='display' values='single'>
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Person Training Cost</value>
+          </configuration>
+        </configurationGroup> <!-- person_traincost -->
+
+        <!-- This section is to add a new form called person_continuous_traincost with the associated
+             class.  The class will be defined in the classes section below. -->
+        <configurationGroup name='person_continuous_traincost'>
+          <displayName>Person Continuous Training Cost</displayName>
+          <description>The Person Continuous Training Cost Form</description>
+          <configuration name='class' values='single'>
+            <displayName>Class Name</displayName>
+            <description>The name of the class providing the form</description>
+            <value>iHRIS_PersonContinuousTrainCost</value> <!-- the class name is iHRIS_PersonContinuousTrainCost -->
+          </configuration>
+          <configuration name='display' values='single'>
+            <displayName>Display name</displayName>
+            <description>The display name for this form</description>
+            <value>Person Continuous Training Cost</value> 
+          </configuration> 
+        </configurationGroup> <!-- person_continuous_traincost -->
+
+        <!-- This section will modify the existing information for the person form to include
+             two new child forms which are the new forms created for this module. -->
+       <configurationGroup name='person_meta' path='/modules/forms/forms/person/meta'>
+          <displayName>MetaData on the form</displayName>
+          <configuration name='child_forms' values='many' > 
+            <status>uniquemerge:true</status>
+            <displayName>Child Forms</displayName>
+            <value>person_traincost</value>
+            <value>person_continuous_traincost</value>
+          </configuration>
+        </configurationGroup> <!-- person_meta -->
+ 
+      </configurationGroup> <!-- End /modules/forms/forms-->
+
+      <configurationGroup name="formClasses" >
+        <displayName>Form Class Configuration</displayName>
+ 
+        <!-- This section will define the person_profdev form class with all the fields and field types. 
+             This class will be created dynamically since no extra funcationality needs to be added for it. -->
+        <configurationGroup name="iHRIS_PersonTrainCost">
+          <displayName>Configuration for the class 'iHRIS_PersonTrainCost'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form.</displayName>
+ 
+            <configurationGroup name="year">
+              <displayName>The fields 'year'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>DATE_Y</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Year</value>
+              </configuration>
+              <configuration name="default_eval">
+                <displayName>The default value for this field as an eval() string</displayName>
+                <value>I2CE_Date::now()</value>
+              </configuration>
+            </configurationGroup> <!-- end of 'year' field defition-->
+            
+            <configurationGroup name="tuition">
+              <displayName>The fields 'tuition'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Tuition Fees</value>
+              </configuration>
+            </configurationGroup> <!-- end of tuition field definitin -->
+
+           <configurationGroup name="allowance">
+              <displayName>The fields 'allowance'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Allowance Fees</value>
+              </configuration>
+            </configurationGroup> <!-- end of allowance field definitin -->
+
+           <configurationGroup name="fares">
+              <displayName>The fields 'fares'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Fares Fees</value>
+              </configuration>
+            </configurationGroup> <!-- end of fares field definitin -->
+
+           <configurationGroup name="visa">
+              <displayName>The fields 'visa'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Visa Fees</value>
+              </configuration>
+            </configurationGroup> <!-- end of visa field definitin -->
+
+           <configurationGroup name="exam">
+              <displayName>The fields 'exam'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Examination Fees</value>
+              </configuration>
+            </configurationGroup> <!-- end of exam field definitin -->
+
+           <configurationGroup name="others">
+              <displayName>The fields 'others'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Others Fees</value>
+              </configuration>
+            </configurationGroup> <!-- end of others field definitin -->
+ 
+          </configurationGroup> <!-- fields -->
+        </configurationGroup> <!-- iHRIS_PersonTrainCost -->
+
+        <!-- This section will define the person_continuous_traincost form class with all the 
+             fields and field types. 
+             This class will be created dynamically since no extra funcationality needs to be added for it. -->
+        <configurationGroup name="iHRIS_PersonContinuousTrainCost">
+          <displayName>Configuration for the class 'iHRIS_PersonContinuousTrainCost'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_Form</value>
+          </configuration>
+          <configurationGroup name="fields">
+            <displayName>The fields defined for this form.</displayName>
+ 
+            <configurationGroup name="training_cost_1">
+              <displayName>The fields 'training_cost_1'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Training Cost 1</value>
+              </configuration>
+            </configurationGroup> <!-- training_cost_1 -->
+            
+            <configurationGroup name="training_cost_2">
+              <displayName>The fields 'training_cost_2'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Training Cost 2</value>
+              </configuration>
+            </configurationGroup> <!-- training_cost_2 -->
+            
+            <configurationGroup name="personal_training_cost_1">
+              <displayName>The fields 'personal_training_cost_1'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Personal Training Cost 1</value>
+              </configuration>
+            </configurationGroup> <!-- personal_training_cost_1 -->
+            
+            <configurationGroup name="personal_training_cost_2">
+              <displayName>The fields 'personal_training_cost_2'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Personal Training Cost  2</value>
+              </configuration>
+            </configurationGroup> <!-- personal_training_cost_2 -->
+ 
+          </configurationGroup> <!-- fields -->
+       </configurationGroup> <!-- iHRIS_PersonContinuousTrainCost-->
+
+      </configurationGroup> <!-- End /modules/forms/formClasses -->
+ 
+    </configurationGroup> <!-- End /modules/forms -->
+
+
+    <configurationGroup name='page'>
+      <displayName>Pages</displayName>
+      <description>Information about various pages made available by the system</description>
+      <status>required:true</status>
+ 
+      <!-- This section will create the person_traincost page so that new training cost
+           forms can be created and assigned to a person's record. -->
+      <configurationGroup name='person_traincost'>
+        <displayName>Person Training Cost Page</displayName>
+        <description> The page 'person_traincost' which has the action of: Add/Update Training Cost</description>
+        <configuration name='class' values='single'>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageFormParentPerson</value>
+        </configuration>
+        <configuration name='style' values='single'>
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name='args'>
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name='title' values='single'>
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Training Cost</value>
+          </configuration>
+          <configuration name='page_form' values='single'>
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>person_traincost</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup> <!-- person_traincost -->
+ 
+      <!-- This section will create the person_continuous_traincost page so that a new continuous training 
+           cost form can be created and assigned to a person's record. -->
+      <configurationGroup name='person_continuous_traincost'>
+        <displayName>Person Continuous Training Cost Page</displayName>
+        <description> The page 'person_continuous_traincost' which has the action of: Add/Update Continuous Training Cost</description>
+        <configuration name='class' values='single'>
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>iHRIS_PageFormParentPerson</value>
+        </configuration>
+        <configuration name='style' values='single'>
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>ihris_common_page_form_parent_person</value>
+        </configuration>
+        <configurationGroup name='args'>
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name='title' values='single'>
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add/Update Continuous Training Cost</value>
+          </configuration>
+          <configuration name='page_form' values='single'>
+            <displayName>Form</displayName>
+            <description>The form this page is using</description>
+            <status>required:true</status>
+            <value>person_continuous_traincost</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup> <!-- person_continuous_traincost -->
+ 
+    </configurationGroup> <!-- page -->
+ 
+  </configurationGroup> <!-- TrainCost -->
+</I2CEConfiguration>      
+
+
+        

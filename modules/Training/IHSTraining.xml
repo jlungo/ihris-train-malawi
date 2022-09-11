@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="IHSTraining">
+  <metadata>
+    <displayName>IHS Training</displayName>
+    <className>IHS_Module_Training</className>
+    <category>Application Component</category>
+    <description>Training Form For Students Tracking System</description>
+    <creator>Ally Shaban</creator>
+    <email>allyshaban5@gmail.com</email>
+    <link>https://launchpad.net/ihris-train</link>
+    <version>4.2.0.13</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <requirement name="STSTraining">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>        
+    <priority>400</priority>
+  </metadata>
+  <erase path="/modules/forms/formClasses/iHRIS_Training/fields/training_classification">
+    <lessThan version="4.2.0.10" />
+  </erase>
+  <erase path="/modules/forms/formClasses/iHRIS_Training/fields/training_length_type">
+    <lessThan version="4.2.0.10" />
+  </erase>
+  <erase path="/modules/forms/formClasses/iHRIS_Training/fields/training_length">
+    <lessThan version="4.2.0.10" />
+  </erase>
+  <erase path="/modules/forms/formClasses/iHRIS_Training/fields/training_type">
+    <lessThan version="4.2.0.10" />
+  </erase>
+  <erase path="/modules/forms/formClasses/iHRIS_Training/fields/cpd_credit">
+    <lessThan version="4.2.0.10" />
+  </erase>
+  <configurationGroup name="STSTraining" path="/I2CE">    
+    <configurationGroup name="forms" path="/modules/forms">
+      <configurationGroup name="forms">
+      <version>4.2.0.10</version>
+	   <configurationGroup name="training">
+       <configuration name='storage'>
+         <value>magicdata</value>
+       </configuration>
+	   </configurationGroup>
+      </configurationGroup>
+      <configurationGroup name="formClasses">       
+        <configurationGroup name="iHRIS_Training">
+          <version>4.2.0.13</version>
+          <displayName>Configuration for the class 'iHRIS_Training'</displayName>
+          <configuration name="extends">
+            <displayName>The class this form extends</displayName>
+            <value>I2CE_SimpleList</value>
+          </configuration>
+	       <configurationGroup name="meta" path="meta/list/default">
+            <configuration name="display_string">
+              <value>%s (%s)</value>
+            </configuration>
+            <configuration name="display_args" type="delimited" values="many">
+              <value>1:name</value>
+              <value>0:code</value>
+            </configuration>
+          </configurationGroup>
+          <configurationGroup name="fields">
+            <version>4.2.0.13</version>
+            <displayName>The fields defined for this form</displayName>            
+            <configurationGroup name="prerequisite">
+              <displayName>The field 'prerequisites'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP_MULT</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>training</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Pre-requisites</value>
+              </configuration>
+            </configurationGroup>
+            <!--prerequisite-->
+            
+            <configurationGroup name="corequisite">
+              <displayName>The field 'corequisites'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP_MULT</value>
+              </configuration>
+              <configurationGroup name="meta">
+                <configuration name="form" values="many">
+                  <value>training</value>
+                </configuration>
+              </configurationGroup>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Co-requisites</value>
+              </configuration>
+            </configurationGroup>
+            <!--corequisite-->
+            <configurationGroup name="training_institution">
+              <displayName>The field 'training_institution'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>MAP_MULT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Training Institutions (For General Education Courses Only)</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="theory_credits">
+              <displayName>The field 'theory_credits'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Theory Credits</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="practice_credits">
+              <displayName>The field 'practice_credits'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Practice Credits</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="theory_hours">
+              <displayName>The field 'theory_hours'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Theory Hours</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="practice_hours">
+              <displayName>The field 'practice_hours'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Practice Hours</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="planning_implementation_evaluation">
+              <displayName>The field 'Planning Implementation'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Planning,Implementation and Evaluation Assessment</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="community_and_diagnosis">
+              <displayName>The field 'Community and diagnosis assessment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Community assessment and diagnosis</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="management_role_practicum">
+              <displayName>The field 'Management role practicum assessment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Management Role Practicum</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="presentation">
+              <displayName>The field 'presentation'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Presentation Assessment</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="recommendations">
+              <displayName>The field 'recomendations assessment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Recomendations Assessment</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="case_study">
+              <displayName>The field 'Case study assessment'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>INT</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Case Study Assessment</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="code">
+              <displayName>The field 'code'</displayName>
+              <configuration name="formfield">
+                <displayName>The form field type</displayName>
+                <value>STRING_LINE</value>
+              </configuration>
+              <configuration name="headers" type="delimited" locale="en_US">
+                <displayName>The headers for this field.</displayName>
+                <value>default:Course Code</value>
+              </configuration>
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>true</value>
+              </configuration>
+              <configuration name="unique" type="boolean">
+                <value>true</value>
+              </configuration>
+            </configurationGroup>
+            <configurationGroup name="training_program">
+              <configuration name="required" type="boolean">
+                <displayName>This field is required to be set</displayName>
+                <value>false</value>
+              </configuration>
+            </configurationGroup>          				
+          </configurationGroup>
+          <!-- fields -->
+        </configurationGroup>
+        <!-- iHRIS_Training -->	     
+      </configurationGroup>
+      <!-- end of  formClasses-->
+     </configurationGroup>
+     <!--end of forms-->
+     <configurationGroup name="page">
+      <version>4.2.0.10</version>
+      <configurationGroup name='add_training_course'>
+        <displayName>Add Training Program Page</displayName>
+        <description> The page 'add_training_course' which has the action of: defining new training courses</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormTrainingCourse</value>
+        </configuration>
+        <configuration name="style" values="single">
+          <displayName>Page Style</displayName>
+          <description>The Page Style</description>
+          <value>shell</value>
+        </configuration>
+
+        <configurationGroup name="args">
+          <displayName>Page Options</displayName>
+          <description>The options that control the access and display of all pages</description>
+          <configuration name="title" values="single" locale="en_US">
+            <displayName>Page Title</displayName>
+            <description>Page Title</description>
+            <status>required:true</status>
+            <value>Add Training Courses</value>
+          </configuration>
+	       <configuration name="defaultHTMLFile" values="single">
+           <value>form_add_training_course.html</value>
+          </configuration>
+        </configurationGroup>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

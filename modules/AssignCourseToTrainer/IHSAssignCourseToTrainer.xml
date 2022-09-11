@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="IHSAssignCourseToTrainer">
+  <metadata>
+    <displayName>Assign Semester Courses To Lecturers</displayName>
+    <category>Application Component</category>
+    <creator>Ally Shaban</creator>
+    <email>allyshaban5@gmail.com</email>
+    <description>Assign Courses To Trainers</description>
+    <link>https://launchpad.net/ihris-train</link>
+    <version>4.2.0.1</version>
+    <path name="configs">
+      <value>./configs</value>
+    </path>
+    <path name="templates">
+      <value>./templates</value>
+    </path>
+    <path name="classes">
+      <value>./lib</value>
+    </path>
+    <priority>350</priority>
+    <requirement name="AssignCourseToTrainer">
+      <atLeast version="4.2" />
+      <lessThan version="4.3" />
+    </requirement>
+  </metadata>
+  <configurationGroup name="IHSAssigncoursetrainer" path="/I2CE">
+    <configurationGroup name="page">
+      <configurationGroup name='assign_course_trainer'>
+        <displayName>Trainer Course Assignment Page</displayName>
+        <description> The page 'assign_course_trainer' which has the action of: assigning courses to trainers</description>
+        <configuration name="class" values="single">
+          <displayName>Page Class</displayName>
+          <description>The class responsible for displaying this page</description>
+          <status>required:true</status>
+          <value>IHS_PageFormAssigncoursetrainer</value>
+        </configuration>
+      </configurationGroup>
+    </configurationGroup>
+  </configurationGroup>
+</I2CEConfiguration>

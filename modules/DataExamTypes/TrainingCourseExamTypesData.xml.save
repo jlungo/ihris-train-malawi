@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<!DOCTYPE I2CEConfiguration SYSTEM "I2CE_Configuration.dtd">
+<I2CEConfiguration name="IHSTrainingCourseExamTypesData">
+ <metadata>
+    <displayName>Course Assessment Types</displayName>
+    <category>Application Component</category>
+    <description>Makes exam result tracking available to training course module</description>
+    <creator>Intrahealth Informatics</creator>
+    <email>hris@capacityproject.org</email>
+    <link>https://launchpad.net/i2ce</link>
+    <version>4.2.0.3</version>
+ </metadata>
+ <configurationGroup name="exam-types" path="/I2CE">
+  <configurationGroup name="exam-types-data" path="/I2CE/formsData/forms/training_course_exam_type">
+   <version>4.2.0.3</version>
+	<configurationGroup name="final">
+	 <configuration name="last_modified">
+     <value>2014-04-16 12:25:30</value>
+	 </configuration>
+	 <configuration name="who">
+     <value>1</value>
+	 </configuration>
+	 <configurationGroup name="fields">
+     <configuration name="name">
+      <value>End Of Semester</value>
+     </configuration>
+	 </configurationGroup>
+   </configurationGroup>
+   <configurationGroup name="management_role_practicum">
+    <configuration name="last_modified">
+     <value>2014-04-16 12:25:30</value>
+    </configuration>
+    <configuration name="who">
+     <value>1</value>
+    </configuration>
+    <configurationGroup name="fields">
+     <configuration name="name">
+      <value>Management Role Practicum</value>
+     </configuration>
+    </configurationGroup>
+   </configurationGroup>
+   <configurationGroup name="practical">
+	 <configuration name="last_modified">
+     <value>2014-04-16 12:25:30</value>
+	 </configuration>
+	 <configuration name="who">
+     <value>1</value>
+	 </configuration>
+	 <configurationGroup name="fields">
+     <configuration name="name">
+      <value>Practical</value>
+     </configuration>
+	 </configurationGroup>
+   </configurationGroup>      
+
+   <configurationGroup name="case_study">
+    <configuration name="last_modified">
+     <value>2014-04-16 12:25:30</value>
+         </configuration>
+         <configuration name="who">
+     <value>1</value>
+         </configuration>
+         <configurationGroup name="fields">
+     <configuration name="name">
+      <value>Case Study</value>
+     </configuration>
+         </configurationGroup>
+   </configurationGroup>
+   <configurationGroup name="assignments">
+	 <configuration name="last_modified">
+     <value>2014-04-16 12:25:30</value>
+	 </configuration>
+	 <configuration name="who">
+     <value>1</value>
+	 </configuration>
+	 <configurationGroup name="fields">
+     <configuration name="name">
+      <value>Assignments</value>
+     </configuration>
+	 </configurationGroup>
+   </configurationGroup>
+   <configurationGroup name="project">
+	 <configuration name="last_modified">
+     <value>2014-04-16 12:25:30</value>
+	 </configuration>
+	 <configuration name="who">
+     <value>1</value>
+	 </configuration>
+	 <configurationGroup name="fields">
+     <configuration name="name">
+      <value>Project</value>
+     </configuration>
+	 </configurationGroup>
+   </configurationGroup>
+   <configurationGroup name="test1">
+	 <configuration name="last_modified">
+     <value>2014-04-16 12:25:30</value>
+	 </configuration>
+	 <configuration name="who">
+     <value>1</value>
+	 </configuration>
+	 <configurationGroup name="fields">
+     <configuration name="name">
+      <value>Test 1</value>
+     </configuration>
+	 </configurationGroup>
+   </configurationGroup>
+   <configurationGroup name="test2">
+	 <configuration name="last_modified">
+     <value>2014-04-16 12:25:30</value>
+	 </configuration>
+	 <configuration name="who">
+     <value>1</value>
+	 </configuration>
+	 <configurationGroup name="fields">
+     <configuration name="name">
+      <value>Test 2</value>
+     </configuration>
+	 </configurationGroup>
+   </configurationGroup>
+   <configurationGroup name="test">
+	 <configuration name="last_modified">
+     <value>2014-04-16 12:25:30</value>
+	 </configuration>
+	 <configuration name="who">
+     <value>1</value>
+	 </configuration>
+	 <configurationGroup name="fields">
+     <configuration name="name">
+      <value>Test</value>
+     </configuration>
+	 </configurationGroup>
+   </configurationGroup>
+   <configurationGroup name="clinical">
+	 <configuration name="last_modified">
+     <value>2014-04-16 12:25:30</value>
+	 </configuration>
+	 <configuration name="who">
+     <value>1</value>
+	 </configuration>
+	 <configurationGroup name="fields">
+     <configuration name="name">
+      <value>Clinical</value>
+     </configuration>
+	 </configurationGroup>
+   </configurationGroup>
+   <configurationGroup name="presentation">
+	 <configuration name="last_modified">
+     <value>2014-04-16 12:25:30</value>
+	 </configuration>
+	 <configuration name="who">
+     <value>1</value>
+	 </configuration>
+	 <configurationGroup name="fields">
+     <configuration name="name">
+      <value>Presenation</value>
+     </configuration>
+	 </configurationGroup>
+   </configurationGroup>
+   <configurationGroup name="recommendations">
+	 <configuration name="last_modified">
+     <value>2014-04-16 12:25:30</value>
+	 </configuration>
+	 <configuration name="who">
+     <value>1</value>
+	 </configuration>
+	 <configurationGroup name="fields">
+     <configuration name="name">
+      <value>Recommendations</value>
+     </configuration>
+	 </configurationGroup>
+   </configurationGroup>
+   <configurationGroup name="community_and_diagnosis">
+	 <configuration name="last_modified">
+     <value>2014-04-16 12:25:30</value>
+	 </configuration>
+	 <configuration name="who">
+     <value>1</value>
+	 </configuration>
+	 <configurationGroup name="fields">
+     <configuration name="name">
+      <value>Community assessment and diagnosis</value>
+     </configuration>
+	 </configurationGroup>
+   </configurationGroup>
+   <configurationGroup name="planning_implementation_evaluation">
+	 <configuration name="last_modified">
+     <value>2014-04-16 12:25:30</value>
+	 </configuration>
+	 <configuration name="who">
+     <value>1</value>
+	 </configuration>
+	 <configurationGroup name="fields">
+     <configuration name="name">
+      <value>Planning,Implementation and Evaluation</value>
+     </configuration>
+	 </configurationGroup>
+   </configurationGroup>
+   <configurationGroup name="final_field_report">
+	 <configuration name="last_modified">
+     <value>2014-04-16 12:25:30</value>
+	 </configuration>
+	 <configuration name="who">
+     <value>1</value>
+	 </configuration>
+	 <configurationGroup name="fields">
+     <configuration name="name">
+      <value>Final Field Report</value>
+     </configuration>
+	 </configurationGroup>
+   </configurationGroup>
+	  </configurationGroup>    
+  </configurationGroup>
+</I2CEConfiguration>

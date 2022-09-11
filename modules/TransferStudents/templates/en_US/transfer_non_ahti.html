@@ -1,0 +1,92 @@
+<div id="siteContent">
+<div id="error" />
+<p>
+<form  method="post" action="transfer_non_ahti">
+<div id="form">
+    <h1>Enter New Student Details</h1>
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <th colspan="2">Enter Transfer Details</th>
+    </tr>
+	<tr id="list_fields">
+		<td>
+				<span type="form" name="transfer:parent" />
+				<span type="form" name="transfer:destination_semester" />
+				<span type="form" name="transfer:destination_level" />
+				<span type="form" name="transfer:destination_institution" />
+				<span type="form" name="transfer:destination_program" />
+				<span type="form" name="transfer:destination_admission_type" />
+				<span type="form" name="registration:training_institution" />
+				<span type="form" name="registration:registration_number" />
+				<span type="form" name="transfer:source_institution_non_ahti" showhead="default"></span>				
+		</td>
+		<td>
+				<span type="form" name="transfer:source_program_non_ahti" showhead="default"></span>
+		</td>
+	</tr>
+	<tr>		
+		<td>
+				<span type="form" name="transfer:transfer_date" showhead="default"></span>
+		</td>
+		<td>
+				<span type="form" name="transfer:academic_year" showhead="default"></span>
+		</td>
+	</tr>
+</table>
+
+        <span type="form" name="person:id"></span>
+<div id="form">
+     
+    <table class="multiFormTable" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+			<th colspan="2">Enter Personal And Registration Details</th>
+	 </tr>
+	 <tr>
+			<th>Personal Information</th><th>Registration Information</th>
+    </tr>
+	<tr id="list_fields">
+		<td>
+		  <span type="form" name="person:title" showhead="default"></span>
+		  <span type="form" name="person:surname" showhead="default"></span>
+		  <span type="form" name="person:surname_ignore" ifset="surname_ignore"></span>
+		  <span type="form" name="person:firstname" showhead="default"></span>
+		  <span type="form" name="person:othername" showhead="default"></span>
+		  <span type="form" name="person:gender" showhead="default"></span>
+		  <span type="form" name="person:nationality" showhead="default"></span>
+		  <span type="form" name="person:location" showhead="default"></span>
+		  <span type="form" name="person:date_of_birth" showhead="default"></span>		  
+		</td>
+		<td>
+		<span type="form" name="registration:parent" />
+		<span type="form" name="registration:academic_year" showhead="default"></span>
+		<span type="form" name="registration:identification_type" showhead="default"></span>
+		<span type="form" name="registration:identification_number" showhead="default"></span>		
+		<span type="form" name="registration:academic_level" showhead="default"></span>
+		<span type="form" name="registration:joined_semester" showhead="default"></span>
+		<span type="form" name="registration:semester" showhead="default"></span>
+    	<span type="form" name="registration:training_program" showhead="default"></span>
+    	<span type="form" name="registration:sponsor" showhead="default"></span>
+    	<span type="form" name="registration:registration_date" showhead="default"></span>
+    	<span type="form" name="registration:council_reg_num" showhead="default"></span>
+    	<span type="form" name="registration:admission_type" showhead="default"></span>   	
+		</td>
+	</tr>
+    <tr class="submitCell">
+        <td colspan="2">
+            <div id="button" />
+        </td>
+    </tr>
+	</table>
+    
+</div>
+    <tr class="submitCell">
+        <td colspan="2">
+            <div id="button"></div>
+        </td>
+    </tr>
+	</table>
+    
+</div>
+    </form>
+</div>
+</div>
